@@ -7,4 +7,6 @@ O descarte de materiais recicláveis no Brasil ainda enfrenta obstáculos como a
 
 A Solução com IA: Como a Inteligência Artificial será aplicada para ser o diferencial do aplicativo? (ex: análise de dados, IA generativa para texto/imagem, sistema de recomendação, etc.).
 
+O objetivo da utilização da Inteligência Artificial é tornar o processo de identificação, separação e descarte de resíduos mais simples e acessível ao usuário. Por meio da análise e classificação dos materiais, a IA auxilia na identificação do tipo de resíduo e fornece orientações sobre sua destinação adequada, contribuindo para práticas de reciclagem mais eficientes.
+
 Público-Alvo: Quem vai usar esse aplicativo móvel no dia a dia?"
