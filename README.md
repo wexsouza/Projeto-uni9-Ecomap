@@ -18,3 +18,6 @@ Os coletores também sofrem com baixa valorização e dificuldade de acesso a ma
 O objetivo da utilização da Inteligência Artificial é tornar o processo de identificação, separação e descarte de resíduos mais simples e acessível ao usuário. Por meio da análise e classificação dos materiais, a IA auxilia na identificação do tipo de resíduo e fornece orientações sobre sua destinação adequada, contribuindo para práticas de reciclagem mais eficientes.
 
 ## Público-Alvo: Quem vai usar esse aplicativo móvel no dia a dia?
+
+
+<img width="6913" height="3731" alt="Blank diagram" src="https://github.com/user-attachments/assets/deedd355-236d-4930-b491-3ab8e6b235e4" />
