@@ -19,5 +19,5 @@ O objetivo da utilização da Inteligência Artificial é tornar o processo de i
 
 ## Público-Alvo: Quem vai usar esse aplicativo móvel no dia a dia?
 
-
+## Diagrama da empresa - Fluxo. 
 <img width="6913" height="3731" alt="Blank diagram" src="https://github.com/user-attachments/assets/deedd355-236d-4930-b491-3ab8e6b235e4" />
