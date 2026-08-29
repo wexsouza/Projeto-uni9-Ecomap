@@ -1,7 +1,4 @@
-# EcoMap
-
-## Nome do Projeto?
-EcoMap
+## EcoMap
 
 ## ODS Escolhido: Qual Objetivo de Desenvolvimento Sustentável o projeto ataca e por quê?
 
