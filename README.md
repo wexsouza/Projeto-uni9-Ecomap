@@ -1,7 +1,7 @@
 ## EcoMap
 
 ## ODS Escolhido: Qual Objetivo de Desenvolvimento Sustentável o projeto ataca e por quê?
-
+O EcoMap está alinhado principalmente ao ODS 12 – Consumo e Produção Responsáveis, pois busca incentivar o descarte correto, a reutilização e a reciclagem de materiais. O projeto reduz a falta de informação sobre pontos de coleta e conecta pessoas que desejam descartar materiais a agentes responsáveis pela coleta, contribuindo para a diminuição de resíduos, o melhor aproveitamento de recursos e a redução dos impactos ambientais.
 
 
 ## O Problema Real: Qual é a dor da sociedade/comunidade que vocês estão resolvendo?
