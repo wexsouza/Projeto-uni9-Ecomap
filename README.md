@@ -17,6 +17,4 @@ O objetivo da utilização da Inteligência Artificial é tornar o processo de i
 
 O público-alvo do EcoMap é composto por pessoas físicas e jurídicas que se preocupam com a sustentabilidade, a saúde e o bem-estar. A plataforma será destinada tanto às pessoas que desejam contribuir com a reciclagem, a doação e o descarte adequado de resíduos quanto aos agentes responsáveis pela coleta desses materiais. Em um cenário de crescente preocupação com os impactos ambientais causados pelo descarte inadequado de resíduos, o EcoMap facilitará a conexão entre doadores e agentes de coleta, tornando esse processo mais prático e acessível no dia a dia. Por meio dos EcoPoints, será possível localizar e disponibilizar pontos de coleta, facilitando a destinação correta dos materiais e incentivando práticas mais conscientes
 
-## Arquitetura 
 
-As decisões do EcoMap foram definidas com base nas necessidades dos dois principais usuários da plataforma: doador e agente de coleta. O fluxo permite que o usuário escolha seu perfil e siga uma jornada específica para sua função. Para o doador, também foi considerada a possibilidade de o material não ser identificado, utilizando o WALL-E para auxiliar na identificação por imagem. Dessa forma, o sistema busca tornar o processo de descarte e coleta mais simples, organizado e acessível.
