@@ -1,4 +1,63 @@
-<!--
-  ⚠️ RESPONSÁVEL: NINGUÉM
-  
--->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoMap | Area do doador</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="doador.css">
+  <link rel="stylesheet" href="Wall-E/walle-widget.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">EcoMap</a>
+    <nav class="topnav" aria-label="Navegacao do doador">
+      <button class="top-link is-active" type="button" data-scroll="map-section">Mapa de coleta</button>
+      <button class="top-link" type="button" data-scroll="donation-section">Disponibilizar material</button>
+      <button class="top-link" type="button" data-scroll="history-section">Historico</button>
+      <button class="top-link" type="button">Opcoes</button>
+    </nav>
+    <span class="profile-chip"><span class="profile-avatar">D</span><span>Perfil do doador</span></span>
+  </header>
+
+  <main class="donor-main">
+    <header class="main-header">
+      <div><span class="eyebrow">Sua contribuicao</span><h1>Cada doacao transforma o futuro.</h1></div>
+      <span class="header-date">Perfil do doador</span>
+    </header>
+
+    <section class="map-section" id="map-section" aria-labelledby="map-title">
+      <div class="section-top"><div><h2 id="map-title">Materiais disponiveis em Sao Paulo</h2><p>Veja onde doadores disponibilizaram materiais reciclaveis no estado.</p></div><span class="map-status">3 materiais no mapa</span></div>
+      <div id="donor-map" aria-label="Mapa de pontos de coleta"></div>
+      <div class="map-legend"><span><i class="legend-dot green"></i> Materiais disponibilizados</span><span><i class="legend-dot"></i> Seu material</span></div>
+    </section>
+
+    <div class="lower-grid">
+      <section class="donation-section" id="donation-section" aria-labelledby="donation-title">
+        <div class="section-top compact"><div><h2 id="donation-title">Disponibilizar material</h2><p>Preencha o que souber. A quantidade e a limpeza sao opcionais.</p></div></div>
+        <form id="donation-form" class="donation-form">
+          <label>Nome do material<input id="material-name" required type="text" placeholder="Ex.: garrafas PET"></label>
+          <label>Tipo de material<select id="material-type" required><option value="">Selecione</option><option value="plastico">Plastico</option><option value="papel">Papel</option><option value="metal">Metal</option><option value="vidro">Vidro</option><option value="eletronico">Eletronico</option><option value="textil">Textil</option></select></label>
+          <label>Quantidade aproximada (opcional)<input id="material-quantity" type="text" placeholder="Ex.: 2 kg ou 10 unidades"></label>
+          <label>Endereco do material<input id="donation-address" required type="text" placeholder="Rua, avenida e numero"></label>
+          <label>Cidade<input id="donation-city" required type="text" value="Sao Paulo" placeholder="Ex.: Itapevi"></label>
+          <label>CEP<input id="donation-cep" required type="text" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" placeholder="00000-000"></label>
+          <label class="check-label"><input id="material-clean" type="checkbox"> Material limpo e separado</label>
+          <button class="primary-button submit-donation" type="submit">Disponibilizar no mapa</button>
+          <p class="form-status" id="donation-status" role="status"></p>
+        </form>
+      </section>
+
+      <section class="history-section" id="history-section" aria-labelledby="history-title">
+        <div class="history-head"><h2 id="history-title">Historico de doacoes</h2><button class="history-link" type="button">Ver tudo</button></div>
+        <div class="history-item"><strong>Materiais separados</strong><span>Cooperativa Verde · 12 jun</span><span class="history-state">Recebido</span></div>
+        <div class="history-item"><strong>Embalagens plasticas</strong><span>EcoPonto Republica · 04 jun</span><span class="history-state">Concluido</span></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="Wall-E/walle-widget.js"></script>
+  <script src="doador.js"></script>
+</body>
+</html>

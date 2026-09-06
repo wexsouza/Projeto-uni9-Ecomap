@@ -1,0 +1,253 @@
+:root {
+  --walle-green: #197a5b;
+  --walle-green-dark: #10543f;
+  --walle-cream: #fffdf7;
+  --walle-ink: #17332b;
+  --walle-line: #d7e6df;
+}
+
+.walle-widget,
+.walle-widget * {
+  box-sizing: border-box;
+}
+
+.walle-widget {
+  color: var(--walle-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+}
+
+.walle-greeting {
+  background: var(--walle-cream);
+  border: 1px solid var(--walle-line);
+  border-radius: 10px;
+  bottom: 68px;
+  box-shadow: 0 8px 24px rgba(16, 84, 63, 0.18);
+  color: var(--walle-ink);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 11px 13px;
+  position: absolute;
+  right: 0;
+  transition: opacity 220ms ease, transform 220ms ease;
+  width: min(285px, calc(100vw - 32px));
+}
+
+.walle-greeting::after {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--walle-cream);
+  bottom: -7px;
+  content: "";
+  position: absolute;
+  right: 22px;
+}
+
+.walle-greeting.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+}
+
+.walle-trigger {
+  align-items: center;
+  background: var(--walle-green);
+  border: 3px solid var(--walle-cream);
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(16, 84, 63, 0.28);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 19px;
+  font-weight: bold;
+  height: 48px;
+  justify-content: center;
+  transition: transform 160ms ease, background 160ms ease;
+  min-width: 82px;
+  padding: 0 13px;
+}
+
+.walle-trigger:hover,
+.walle-trigger:focus-visible {
+  background: var(--walle-green-dark);
+  transform: translateY(-3px);
+}
+
+.walle-panel {
+  background: var(--walle-cream);
+  border: 1px solid var(--walle-line);
+  border-radius: 12px;
+  bottom: 72px;
+  box-shadow: 0 14px 38px rgba(16, 84, 63, 0.2);
+  display: none;
+  padding: 18px;
+  position: absolute;
+  right: 0;
+  width: min(330px, calc(100vw - 32px));
+}
+
+.walle-panel.is-open {
+  display: block;
+}
+
+.walle-heading {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.walle-heading h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.walle-heading p {
+  color: #557066;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+  margin: 5px 0 0;
+}
+
+.walle-close {
+  background: transparent;
+  border: 0;
+  color: #557066;
+  cursor: pointer;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.walle-upload {
+  border: 1px dashed #8eb9a8;
+  border-radius: 8px;
+  color: var(--walle-green-dark);
+  cursor: pointer;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.walle-actions {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.walle-upload:hover {
+  background: #eef8f3;
+}
+
+.walle-upload input {
+  display: none;
+}
+
+.walle-status,
+.walle-result {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-top: 12px;
+}
+
+.walle-status {
+  color: #557066;
+}
+
+.walle-result {
+  border-left: 3px solid var(--walle-green);
+  padding-left: 10px;
+}
+
+.walle-result strong {
+  color: var(--walle-green-dark);
+}
+
+.walle-chat {
+  border-top: 1px solid var(--walle-line);
+  font-family: Arial, sans-serif;
+  margin-top: 16px;
+  padding-top: 13px;
+}
+
+.walle-chat-title {
+  color: var(--walle-green-dark);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.walle-faqs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 9px;
+}
+
+.walle-faqs button {
+  background: #eef8f3;
+  border: 1px solid var(--walle-line);
+  border-radius: 6px;
+  color: var(--walle-green-dark);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 6px 7px;
+}
+
+.walle-faqs button:hover,
+.walle-faqs button:focus-visible {
+  background: #dcefe5;
+}
+
+.walle-chat-log {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.walle-chat-message {
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 6px 0;
+  padding: 7px 9px;
+}
+
+.walle-chat-message.is-user { background: #edf3ef; margin-left: 22px; }
+.walle-chat-message.is-walle { background: #e4f2e9; margin-right: 12px; }
+
+.walle-chat-form {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.walle-chat-form input {
+  border: 1px solid var(--walle-line);
+  border-radius: 6px;
+  min-width: 0;
+  padding: 8px;
+  width: 100%;
+}
+
+.walle-chat-form button {
+  background: var(--walle-green);
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  width: 34px;
+}
+
+@media (max-width: 480px) {
+  .walle-widget {
+    bottom: 14px;
+    right: 14px;
+  }
+}
