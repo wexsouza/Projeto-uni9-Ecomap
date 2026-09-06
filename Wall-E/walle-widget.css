@@ -219,6 +219,18 @@
   background: #dcefe5;
 }
 
+.walle-faqs .walle-about-button {
+  background: #fff1d9;
+  border-color: #e7bf79;
+  color: #81531d;
+  grid-column: 1 / -1;
+}
+
+.walle-faqs .walle-about-button:hover,
+.walle-faqs .walle-about-button:focus-visible {
+  background: #ffe6b9;
+}
+
 .walle-chat-log {
   max-height: 150px;
   overflow-y: auto;

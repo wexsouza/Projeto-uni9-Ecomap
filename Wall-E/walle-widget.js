@@ -28,6 +28,7 @@
     '      <button type="button" data-faq="eletronico">Como descartar eletronicos?</button>',
     '      <button type="button" data-faq="organico">Como descartar organicos?</button>',
     '      <button type="button" data-faq="perigoso">Como descartar pilhas e oleo?</button>',
+    '      <button class="walle-about-button" type="button" data-faq="quem-somos">Quem somos nos?</button>',
     '    </div>',
     '    <div class="walle-chat-log" role="log"></div>',
     '    <form class="walle-chat-form"><input type="text" placeholder="Ex.: como preparar o plastico?" aria-label="Pergunta sobre reciclagem"><button type="submit" aria-label="Enviar pergunta">&rarr;</button></form>',
@@ -54,6 +55,7 @@
     ecomap: "O EcoMap e uma plataforma que conecta pessoas, materiais reciclaveis e pontos de coleta para tornar o descarte mais simples, informado e acessivel.",
     criadores: "O EcoMap e um projeto universitario criado por jovens da Universidade Nove de Julho: Wesley Souza, Wesley Assis, Lucas, Pedro, Vinicius Nascimento e Victor.",
     missao: "Nossa missao e aproximar quem quer descartar corretamente de quem coleta e reaproveita materiais. Nossa visao e tornar a sustentabilidade mais pratica no dia a dia, com tecnologia, informacao e impacto local.",
+    "quem-somos": "Somos estudantes de Tecnologia da Informacao da Universidade Nove de Julho e criadores do EcoMap. O projeto nasceu na faculdade para enfrentar um problema real: a dificuldade de encontrar informacao e locais adequados para descartar materiais. Wesley Souza, Wesley Assis, Lucas, Pedro, Vinicius Nascimento e Victor constroem esta proposta com tecnologia e responsabilidade ambiental. Nossa missao e aproximar doadores, coletores e pontos de coleta. Nossa visao e tornar o descarte consciente simples, acessivel e presente no cotidiano. Nossos valores sao colaboracao, sustentabilidade, inclusao, responsabilidade e inovacao.",
     vidro: "Separe garrafas e potes de vidro, retire tampas e lave se necessario. Envolva cacos em papel ou caixa identificada e leve ao ponto de coleta; nao coloque vidro quebrado solto no saco.",
     metal: "Lave latas e embalagens metalicas, seque e amasse quando for seguro. Separe objetos cortantes e leve tudo a um ponto de coleta ou cooperativa.",
     plastico: "Esvazie, lave e seque garrafas, potes e embalagens plasticas. Retire o excesso de residuos, tampe se possivel e encaminhe para coleta seletiva.",
@@ -127,6 +129,7 @@
 
   function getFaqAnswer(question) {
     var normalized = normalizeQuestion(question);
+    if (normalized.indexOf("quem somos") !== -1 || normalized.indexOf("sobre nos") !== -1) return faqAnswers["quem-somos"];
     if (/quem e voce|quem voce e|seu nome|o que e o ecomap|sobre a empresa|quem criou|criadores|fundadores|missao|visao|valores/i.test(normalized)) {
       if (/quem e voce|quem voce e|seu nome/i.test(normalized)) return faqAnswers.identidade;
       if (/quem criou|criadores|fundadores/i.test(normalized)) return faqAnswers.criadores;
