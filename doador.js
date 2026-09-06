@@ -18,7 +18,7 @@
     minZoom: 7
   }).setView(defaultCenter, 14);
   L.control.zoom({ position: "bottomright" }).addTo(map);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap", maxZoom: 19 }).addTo(map);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", { attribution: "&copy; OpenStreetMap &copy; CARTO", subdomains: "abcd", maxZoom: 19 }).addTo(map);
 
   function markerIcon(color) {
     return L.divIcon({ className: "", html: '<span class="map-donation-marker" style="background:' + color + '"></span>', iconSize: [24, 24], iconAnchor: [12, 12] });

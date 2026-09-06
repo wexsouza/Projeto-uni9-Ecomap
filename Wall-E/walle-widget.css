@@ -1,9 +1,11 @@
 :root {
   --walle-green: #197a5b;
   --walle-green-dark: #10543f;
-  --walle-cream: #fffdf7;
+  --walle-cream: #ffffff;
   --walle-ink: #17332b;
   --walle-line: #d7e6df;
+  --walle-sage: #eaf5ef;
+  --walle-coral: #db725a;
 }
 
 .walle-widget,
@@ -13,7 +15,7 @@
 
 .walle-widget {
   color: var(--walle-ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial, sans-serif;
   position: fixed;
   right: 22px;
   bottom: 22px;
@@ -23,11 +25,10 @@
 .walle-greeting {
   background: var(--walle-cream);
   border: 1px solid var(--walle-line);
-  border-radius: 10px;
+  border-radius: 16px;
   bottom: 68px;
   box-shadow: 0 8px 24px rgba(16, 84, 63, 0.18);
   color: var(--walle-ink);
-  font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 1.4;
   padding: 11px 13px;
@@ -56,19 +57,19 @@
 .walle-trigger {
   align-items: center;
   background: var(--walle-green);
-  border: 3px solid var(--walle-cream);
-  border-radius: 30px;
+  border: 4px solid white;
+  border-radius: 50%;
   box-shadow: 0 8px 24px rgba(16, 84, 63, 0.28);
   color: white;
   cursor: pointer;
   display: flex;
-  font-size: 19px;
+  font-size: 12px;
   font-weight: bold;
-  height: 48px;
+  height: 62px;
   justify-content: center;
   transition: transform 160ms ease, background 160ms ease;
-  min-width: 82px;
-  padding: 0 13px;
+  min-width: 62px;
+  padding: 0 8px;
 }
 
 .walle-trigger:hover,
@@ -78,16 +79,17 @@
 }
 
 .walle-panel {
-  background: var(--walle-cream);
-  border: 1px solid var(--walle-line);
-  border-radius: 12px;
-  bottom: 72px;
-  box-shadow: 0 14px 38px rgba(16, 84, 63, 0.2);
+  background: #fff;
+  border: 1px solid rgba(25, 122, 91, .18);
+  border-radius: 22px;
+  bottom: 82px;
+  box-shadow: 0 22px 55px rgba(16, 84, 63, 0.22);
   display: none;
-  padding: 18px;
+  overflow: hidden;
+  padding: 0 18px 18px;
   position: absolute;
   right: 0;
-  width: min(330px, calc(100vw - 32px));
+  width: min(390px, calc(100vw - 28px));
 }
 
 .walle-panel.is-open {
@@ -98,11 +100,19 @@
   align-items: start;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  background: linear-gradient(135deg, #f0f8f3, #fff 70%);
+  margin: 0 -18px 16px;
+  padding: 17px 18px 15px;
 }
 
+.walle-title { align-items: center; display: flex; gap: 10px; }
+.walle-orbit { align-items: center; background: white; border: 1px solid var(--walle-line); border-radius: 50%; display: flex; height: 42px; justify-content: center; overflow: hidden; width: 42px; }
+.walle-orbit img { height: 34px; mix-blend-mode: multiply; object-fit: contain; width: 34px; }
+
 .walle-heading h2 {
-  font-size: 20px;
+  color: var(--walle-green-dark);
+  font-family: Georgia, serif;
+  font-size: 22px;
   margin: 0;
 }
 
@@ -124,14 +134,15 @@
 }
 
 .walle-upload {
-  border: 1px dashed #8eb9a8;
+  background: #fbfefc;
+  border: 1px solid #b9d8c8;
   border-radius: 8px;
   color: var(--walle-green-dark);
   cursor: pointer;
   display: block;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  padding: 12px;
+  padding: 13px 10px;
   text-align: center;
 }
 
@@ -173,32 +184,34 @@
 .walle-chat {
   border-top: 1px solid var(--walle-line);
   font-family: Arial, sans-serif;
-  margin-top: 16px;
-  padding-top: 13px;
+  margin-top: 18px;
+  padding-top: 15px;
 }
 
 .walle-chat-title {
   color: var(--walle-green-dark);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0 0 8px;
 }
 
 .walle-faqs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 5px;
   margin-bottom: 9px;
 }
 
 .walle-faqs button {
-  background: #eef8f3;
+  background: var(--walle-sage);
   border: 1px solid var(--walle-line);
   border-radius: 6px;
   color: var(--walle-green-dark);
   cursor: pointer;
   font-size: 11px;
-  padding: 6px 7px;
+  line-height: 1.25;
+  min-height: 34px;
+  padding: 7px 8px;
 }
 
 .walle-faqs button:hover,
@@ -212,7 +225,7 @@
 }
 
 .walle-chat-message {
-  border-radius: 7px;
+  border-radius: 12px;
   font-size: 12px;
   line-height: 1.35;
   margin: 6px 0;
@@ -220,7 +233,8 @@
 }
 
 .walle-chat-message.is-user { background: #edf3ef; margin-left: 22px; }
-.walle-chat-message.is-walle { background: #e4f2e9; margin-right: 12px; }
+.walle-chat-message.is-walle { background: #e4f2e9; margin-right: 12px; padding-left: 37px; position: relative; }
+.walle-chat-message.is-walle::before { background: white url("../logo%20EcoMap/logo.jpeg") center / 25px 25px no-repeat; border: 1px solid #c9e3d5; border-radius: 50%; content: ""; height: 27px; left: 6px; mix-blend-mode: multiply; position: absolute; top: 7px; width: 27px; }
 
 .walle-chat-form {
   display: flex;
@@ -230,7 +244,7 @@
 
 .walle-chat-form input {
   border: 1px solid var(--walle-line);
-  border-radius: 6px;
+  border-radius: 10px;
   min-width: 0;
   padding: 8px;
   width: 100%;
@@ -239,10 +253,11 @@
 .walle-chat-form button {
   background: var(--walle-green);
   border: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
-  width: 34px;
+  font-size: 18px;
+  width: 40px;
 }
 
 @media (max-width: 480px) {
@@ -250,4 +265,9 @@
     bottom: 14px;
     right: 14px;
   }
+
+  .walle-panel { right: -4px; }
 }
+
+.walle-trigger { height: 72px; min-width: 72px; }
+.walle-panel { bottom: 94px; }

@@ -59,7 +59,7 @@ def question():
 
     instructions = (
         SYSTEM_INSTRUCTIONS
-        + "\nResponda a pergunta em uma frase curta, somente sobre reciclagem."
+        + "\nResponda de forma natural, objetiva e acolhedora. Voce pode falar sobre o WALL-E, o EcoMap, seus criadores, missao, visao e valores, alem de sustentabilidade, reciclagem, saude e bem-estar relacionados ao meio ambiente."
     )
     try:
         response = OpenAI().responses.create(

@@ -6,10 +6,10 @@
   widget.className = "walle-widget";
   widget.setAttribute("aria-label", "Assistente WALL-E");
   widget.innerHTML = [
-    '<div class="walle-greeting" role="status">Ola! Eu sou o WALL-E, a inteligencia artificial do EcoMap. Posso ajudar a identificar materiais reciclaveis.</div>',
+    '<div class="walle-greeting" role="status">Ola! Eu sou o WALL-E. Posso conversar sobre reciclagem, sustentabilidade e descarte consciente.</div>',
     '<div class="walle-panel" id="walle-panel">',
     '  <div class="walle-heading">',
-    "    <div><h2>WALL-E</h2><p>Envie uma imagem para identificar o material.</p></div>",
+    '    <div class="walle-title"><span class="walle-orbit"><img src="logo%20EcoMap/logo.jpeg" alt=""></span><div><h2>WALL-E</h2><p>Seu guia para escolhas mais sustentaveis.</p></div></div>',
     '    <button class="walle-close" type="button" aria-label="Fechar">&times;</button>',
     "  </div>",
     '  <div class="walle-actions">',
@@ -19,7 +19,7 @@
     '  <div class="walle-status" role="status"></div>',
     '  <div class="walle-result" hidden></div>',
     '  <div class="walle-chat">',
-    '    <p class="walle-chat-title">Duvidas sobre reciclagem</p>',
+    '    <p class="walle-chat-title">Sustentabilidade no dia a dia</p>',
     '    <div class="walle-faqs" aria-label="Perguntas frequentes">',
     '      <button type="button" data-faq="vidro">Como descartar vidro?</button>',
     '      <button type="button" data-faq="metal">Como descartar metal?</button>',
@@ -50,6 +50,10 @@
   var faqButtons = widget.querySelectorAll("[data-faq]");
 
   var faqAnswers = {
+    identidade: "Eu sou o WALL-E, o assistente de sustentabilidade do EcoMap. Ajudo a identificar materiais, orientar o descarte e responder duvidas sobre reciclagem e escolhas mais conscientes.",
+    ecomap: "O EcoMap e uma plataforma que conecta pessoas, materiais reciclaveis e pontos de coleta para tornar o descarte mais simples, informado e acessivel.",
+    criadores: "O EcoMap e um projeto universitario criado por jovens da Universidade Nove de Julho: Wesley Souza, Wesley Assis, Lucas, Pedro, Vinicius Nascimento e Victor.",
+    missao: "Nossa missao e aproximar quem quer descartar corretamente de quem coleta e reaproveita materiais. Nossa visao e tornar a sustentabilidade mais pratica no dia a dia, com tecnologia, informacao e impacto local.",
     vidro: "Separe garrafas e potes de vidro, retire tampas e lave se necessario. Envolva cacos em papel ou caixa identificada e leve ao ponto de coleta; nao coloque vidro quebrado solto no saco.",
     metal: "Lave latas e embalagens metalicas, seque e amasse quando for seguro. Separe objetos cortantes e leve tudo a um ponto de coleta ou cooperativa.",
     plastico: "Esvazie, lave e seque garrafas, potes e embalagens plasticas. Retire o excesso de residuos, tampe se possivel e encaminhe para coleta seletiva.",
@@ -105,8 +109,8 @@
 
   imageInputs.forEach(function (input) { input.addEventListener("change", function () { analyzeImage(input); }); });
 
-  function isRecyclingQuestion(question) {
-    return /recicl|residu|lixo|material|plast|papel|metal|vidro|eletron|textil|coleta|descarte|limp|separ/i.test(question);
+  function isSustainabilityQuestion(question) {
+    return /sustent|recicl|residu|lixo|material|plast|papel|metal|vidro|eletron|textil|coleta|descarte|limp|separ|compost|reutil|reuso|consumo|energia|agua|organ|polu|emissao|carbono|doa|verde|clima|nature|biodivers|ambient|horta|saude|bem.?estar|quem.?e.?voce|ecomap|empresa|criador|missao|visao|valor/i.test(question);
   }
 
   function addChatMessage(text, className) {
@@ -123,6 +127,12 @@
 
   function getFaqAnswer(question) {
     var normalized = normalizeQuestion(question);
+    if (/quem e voce|quem voce e|seu nome|o que e o ecomap|sobre a empresa|quem criou|criadores|fundadores|missao|visao|valores/i.test(normalized)) {
+      if (/quem e voce|quem voce e|seu nome/i.test(normalized)) return faqAnswers.identidade;
+      if (/quem criou|criadores|fundadores/i.test(normalized)) return faqAnswers.criadores;
+      if (/missao|visao|valores/i.test(normalized)) return faqAnswers.missao;
+      return faqAnswers.ecomap;
+    }
     var materials = Object.keys(faqAnswers);
     for (var index = 0; index < materials.length; index += 1) {
       if (normalized.indexOf(materials[index]) !== -1) return faqAnswers[materials[index]];
@@ -152,8 +162,8 @@
     addChatMessage(question, "is-user");
     chatInput.value = "";
     if (answerFaq(question)) return;
-    if (!isRecyclingQuestion(question)) {
-      addChatMessage("Posso responder apenas sobre identificacao, separacao e reciclagem de materiais.", "is-walle");
+    if (!isSustainabilityQuestion(question)) {
+      addChatMessage("Posso conversar sobre o EcoMap, seus criadores e sua missao, alem de sustentabilidade, reciclagem, descarte, reutilizacao, compostagem, saude e bem-estar.", "is-walle");
       return;
     }
     addChatMessage("Vou verificar isso sobre reciclagem...", "is-walle");
