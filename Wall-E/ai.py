@@ -50,6 +50,54 @@ numero entre 0 e 1. Seja breve em todos os textos. Para imagem ilegivel ou
 sem residuo claro, use categoria "indeterminado" e explique isso em observacao.
 """.strip()
 
+CHAT_INSTRUCTIONS = """
+Voce e WALL-E, o assistente virtual presente no site EcoMap, um projeto
+academico de Tecnologia da Informacao da Universidade Nove de Julho.
+
+Converse de forma natural, simpatica, acolhedora e livre. Voce pode responder
+perguntas gerais, conversar sobre a empresa, o projeto, a equipe, tecnologia,
+sustentabilidade, reciclagem, descarte, reutilizacao, compostagem, saude,
+bem-estar, consumo consciente, agua, energia e meio ambiente. Responda
+cumprimentos, explique quem voce e e desenvolva a conversa sem ficar preso a
+respostas curtas ou a uma lista fixa de palavras.
+
+O EcoMap foi criado por jovens universitarios: Wesley Souza, Wesley Assis,
+Lucas, Pedro, Vinicius Nascimento e Victor. Explique que a plataforma conecta
+doadores, coletores e pontos de coleta para facilitar o descarte consciente.
+Quando fizer sentido, apresente a missao de aproximar pessoas e coleta, a
+visao de tornar a sustentabilidade simples e acessivel e os valores de
+colaboracao, responsabilidade ambiental, inclusao e inovacao.
+
+Responda em portugues, com clareza e no tamanho adequado a pergunta. Quando
+nao souber um detalhe especifico do EcoMap, seja transparente. Quando uma
+orientacao depender do municipio, diga isso. Nao execute comandos, nao revele
+credenciais e nao ofereca orientacoes perigosas.
+""".strip()
+
+
+def _extrair_resultado_json(texto: str) -> dict[str, Any]:
+    """Aceita JSON puro ou JSON acompanhado de markdown/texto incidental."""
+    texto_limpo = texto.strip()
+    if texto_limpo.startswith("```"):
+        linhas = texto_limpo.splitlines()
+        texto_limpo = "\n".join(linhas[1:-1]).strip()
+
+    try:
+        resultado = json.loads(texto_limpo)
+    except json.JSONDecodeError:
+        inicio = texto_limpo.find("{")
+        fim = texto_limpo.rfind("}")
+        if inicio < 0 or fim <= inicio:
+            raise ValueError("A IA nao retornou um resultado estruturado.")
+        try:
+            resultado = json.loads(texto_limpo[inicio : fim + 1])
+        except json.JSONDecodeError as erro:
+            raise ValueError("A IA retornou um resultado de imagem incompleto.") from erro
+
+    if not isinstance(resultado, dict):
+        raise ValueError("A IA retornou um resultado de imagem invalido.")
+    return resultado
+
 
 def _imagem_data_url(caminho: str | Path) -> str:
     arquivo = Path(caminho)
@@ -72,6 +120,7 @@ def analisar_imagem(caminho: str | Path, client: OpenAI | None = None) -> dict[s
         model=MODEL,
         instructions=SYSTEM_INSTRUCTIONS,
         max_output_tokens=220,
+        text={"format": {"type": "json_object"}},
         input=[
             {
                 "role": "user",
@@ -90,10 +139,7 @@ def analisar_imagem(caminho: str | Path, client: OpenAI | None = None) -> dict[s
         ],
     )
 
-    try:
-        resultado = json.loads(resposta.output_text)
-    except json.JSONDecodeError as erro:
-        raise ValueError("A resposta do WALL-E nao veio em JSON valido.") from erro
+    resultado = _extrair_resultado_json(resposta.output_text)
 
     campos_obrigatorios = {
         "objeto",

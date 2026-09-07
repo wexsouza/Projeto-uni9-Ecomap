@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, request, send_from_directory
 from openai import OpenAI
 
-from ai import SYSTEM_INSTRUCTIONS, analisar_imagem
+from ai import CHAT_INSTRUCTIONS, analisar_imagem
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -57,15 +57,11 @@ def question():
     if not question_text:
         return _error("Envie uma pergunta.")
 
-    instructions = (
-        SYSTEM_INSTRUCTIONS
-        + "\nResponda de forma natural, objetiva e acolhedora. Voce pode falar sobre o WALL-E, o EcoMap, seus criadores, missao, visao e valores, alem de sustentabilidade, reciclagem, saude e bem-estar relacionados ao meio ambiente."
-    )
     try:
         response = OpenAI().responses.create(
             model="gpt-4o-mini",
-            instructions=instructions,
-            max_output_tokens=120,
+            instructions=CHAT_INSTRUCTIONS,
+            max_output_tokens=220,
             input=question_text,
         )
         return jsonify({"resposta": response.output_text})
