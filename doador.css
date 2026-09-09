@@ -9,6 +9,11 @@ button, input, select { font: inherit; }
 .sidebar-intro strong { color: #fff; font-family: Georgia, serif; font-size: 18px; font-weight: normal; line-height: 1.15; }
 .sidebar-intro span { font-size: 11px; line-height: 1.45; }
 .topnav { display: flex; gap: 4px; margin-right: auto; }
+.menu-toggle { background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 7px; cursor: pointer; display: none; height: 42px; padding: 9px; width: 42px; }
+.menu-toggle span { background: #fff; display: block; height: 2px; margin: 4px 0; transition: transform .2s ease, opacity .2s ease; width: 22px; }
+.menu-toggle.is-open span:first-child { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:last-child { transform: translateY(-6px) rotate(-45deg); }
 .top-link { background: transparent; border: 0; border-radius: 7px; color: #dbeee5; cursor: pointer; padding: 11px 13px; }
 .top-link:hover, .top-link.is-active { background: rgba(184,216,91,.16); color: #fff; }
 .profile-chip { align-items: center; border-left: 1px solid rgba(255,255,255,.25); color: #c9e3d7; display: flex; font-size: 12px; gap: 8px; padding-left: 25px; white-space: nowrap; }
@@ -55,7 +60,7 @@ input:focus, select:focus { border-color: var(--green); outline: 3px solid var(-
 .history-state { color: var(--green) !important; font-weight: bold; }
 .map-donation-marker { align-items: center; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,.3); display: flex; height: 24px; justify-content: center; width: 24px; }
 .map-select { background: var(--green); border: 0; border-radius: 4px; color: #fff; cursor: pointer; margin-top: 5px; padding: 6px 8px; }
-@media (max-width: 760px) { .topbar { align-items: flex-start; flex-wrap: wrap; gap: 10px; padding-bottom: 13px; padding-top: 15px; } .topnav { flex-basis: 100%; overflow-x: auto; order: 3; } .top-link { white-space: nowrap; } .profile-chip { margin-left: auto; } .main-header { align-items: start; flex-direction: column; gap: 8px; } .lower-grid { grid-template-columns: 1fr; } #donor-map { height: 390px; } }
+@media (max-width: 760px) { .topbar { align-items: center; flex-wrap: wrap; gap: 10px; padding-bottom: 13px; padding-top: 15px; } .menu-toggle { display: block; margin-left: auto; } .topnav { background: var(--green-dark); display: none; flex-basis: 100%; gap: 4px; order: 4; padding-top: 4px; } .topnav.is-open { display: grid; } .top-link { text-align: left; white-space: normal; width: 100%; } .profile-chip { border-left: 0; margin-left: 0; padding-left: 0; } .main-header { align-items: start; flex-direction: column; gap: 8px; } .lower-grid { grid-template-columns: 1fr; } #donor-map { height: 390px; } }
 @media (max-width: 520px) { .donor-main { padding: 24px 12px 44px; } .address-row { flex-direction: column; padding-left: 16px; padding-right: 16px; } .address-row .primary-button { min-height: 44px; } .section-top { padding-left: 16px; padding-right: 16px; } .map-legend { padding-left: 16px; padding-right: 16px; } .donation-form { grid-template-columns: 1fr; padding: 0 16px; } .donation-form .check-label { grid-column: auto; } }
 
 @media (min-width: 761px) {
@@ -76,4 +81,15 @@ input:focus, select:focus { border-color: var(--green); outline: 3px solid var(-
 	.topbar { min-height: 72px; }
 	.company-mark { margin-top: 2px; }
 	.dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+	.brand { font-size: 24px; }
+	.sidebar-intro { min-width: 0; padding: 0; }
+	.sidebar-intro strong { font-size: 15px; }
+	.sidebar-intro span { display: none; }
+	.profile-chip span:last-child { display: none; }
+	.section-top { align-items: flex-start; flex-direction: column; gap: 12px; }
+	.map-status { align-self: flex-start; }
+	#donor-map { height: 330px; }
 }

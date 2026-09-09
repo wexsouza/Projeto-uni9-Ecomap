@@ -63,8 +63,32 @@
 
   var status = document.querySelector(".map-status");
 
+  var menuToggle = document.querySelector(".menu-toggle");
+  var navigation = document.querySelector(".topnav");
+
+  function closeNavigation() {
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+    navigation.classList.remove("is-open");
+  }
+
+  menuToggle.addEventListener("click", function () {
+    var isOpen = menuToggle.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    navigation.classList.toggle("is-open", isOpen);
+  });
+
   document.querySelectorAll("[data-scroll]").forEach(function (button) {
-    button.addEventListener("click", function () { document.getElementById(button.dataset.scroll).scrollIntoView({ behavior: "smooth" }); });
+    button.addEventListener("click", function () {
+      document.getElementById(button.dataset.scroll).scrollIntoView({ behavior: "smooth" });
+      closeNavigation();
+    });
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 760) closeNavigation();
   });
 
   document.querySelector("#donation-form").addEventListener("submit", async function (event) {
