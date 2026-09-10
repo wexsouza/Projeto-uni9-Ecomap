@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecomaps — Transforme São Paulo através da Reciclagem</title>
+  <meta name="description" content="Ecomaps conecta doadores de materiais recicláveis e coletores em São Paulo. Encontre pontos de coleta ou solicite a coleta em casa." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Logotipo Ecomaps" width="40" height="40" />
+        <span>Eco<strong>map</strong></span>
+      </a>
+
+      <!-- Botão hambúrguer: visível apenas no mobile (ver style.css) -->
+      <button class="hamburger" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#como-reciclar">Como Reciclar</a>
+        <a href="#pontos">Pontos de Coleta</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a class="nav-cta" href="login.html">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Transforme São Paulo através da Reciclagem</h1>
+      <p>Facilite o descarte correto, encontre pontos de coleta ou solicite a coleta em sua casa.</p>
+      <!-- Leva o usuário para a tela de login -->
+      <a class="btn btn-primary btn-lg" href="login.html">Quero Reciclar / Cadastrar Endereço</a>
+    </div>
+  </section>
+
+  <!-- ================= COMO FUNCIONA ================= -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-sub">Três passos simples para reciclar do jeito certo.</p>
+
+      <div class="cards-3">
+        <article class="card">
+          <div class="card-icon">
+            <!-- Ícone: materiais recicláveis -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.5a2.5 2.5 0 0 1-2.1-3.8L6 9"/><path d="M9 4.6a2.5 2.5 0 0 1 4.2 0L17 11"/><path d="M17 19h2.5a2.5 2.5 0 0 0 2.1-3.8L20 12"/><path d="m5 9 3-1.5M9 19l2-3h-4"/><path d="m18 12 3 1"/></svg>
+          </div>
+          <h3>1. Separe seus materiais</h3>
+          <p>Separe corretamente seus materiais recicláveis.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <!-- Ícone: endereço / localização -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>2. Cadastre seu endereço</h3>
+          <p>Informe seu endereço para encontrar opções de coleta.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <!-- Ícone: caminhão de coleta -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2z"/><path d="M13 10h4l4 3v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+          </div>
+          <h3>3. Agende a coleta ou ache um ponto</h3>
+          <p>Solicite uma coleta ou encontre um ponto de coleta próximo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMO RECICLAR ================= -->
+  <section class="section section-alt" id="como-reciclar">
+    <div class="container">
+      <h2 class="section-title">Como Reciclar</h2>
+      <ol class="steps">
+        <li><strong>Separe os materiais.</strong> Papel, plástico, vidro, metal e orgânicos em recipientes diferentes.</li>
+        <li><strong>Identifique o tipo de material.</strong> Limpe e seque embalagens antes de descartar.</li>
+        <li><strong>Procure um ponto de coleta ou solicite uma coleta.</strong> Use o Ecomaps para localizar a opção mais próxima.</li>
+        <li><strong>Entregue o material corretamente separado.</strong> Isso facilita o trabalho do coletor.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= PONTOS DE COLETA ================= -->
+  <section class="section" id="pontos">
+    <div class="container">
+      <h2 class="section-title">Pontos de Coleta</h2>
+      <p class="section-sub">Pontos de exemplo neste protótipo.</p>
+
+      <div class="cards-4">
+        <article class="point-card">
+          <span class="pin">📍</span>
+          <h3>Ponto de Coleta Centro</h3>
+          <p>Rua Sete de Abril, 120 — Centro</p>
+          <small>Seg a Sáb · 8h às 18h</small>
+        </article>
+        <article class="point-card">
+          <span class="pin">📍</span>
+          <h3>Ponto de Coleta Zona Norte</h3>
+          <p>Av. Santana, 455 — Santana</p>
+          <small>Seg a Sex · 9h às 17h</small>
+        </article>
+        <article class="point-card">
+          <span class="pin">📍</span>
+          <h3>Ponto de Coleta Zona Sul</h3>
+          <p>Rua das Acácias, 78 — Santo Amaro</p>
+          <small>Seg a Sáb · 8h às 16h</small>
+        </article>
+        <article class="point-card">
+          <span class="pin">📍</span>
+          <h3>Ponto de Coleta Zona Leste</h3>
+          <p>Av. Aricanduva, 3000 — Aricanduva</p>
+          <small>Ter a Dom · 9h às 18h</small>
+        </article>
+      </div>
+
+      <div class="center">
+        <a class="btn btn-outline" href="login.html">Ver pontos de coleta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="section section-alt" id="sobre">
+    <div class="container narrow">
+      <h2 class="section-title">Sobre o Ecomaps</h2>
+      <p class="lead">
+        O Ecomaps é uma plataforma criada para facilitar a conexão entre pessoas que possuem
+        materiais recicláveis e coletores. Nosso objetivo é organizar o descarte correto,
+        dar visibilidade aos pontos de coleta da cidade e valorizar o trabalho de quem
+        recolhe e destina os materiais.
+      </p>
+      <div class="center">
+        <a class="btn btn-primary" href="login.html">Começar agora</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="ano"></span> Ecomaps — Protótipo acadêmico.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

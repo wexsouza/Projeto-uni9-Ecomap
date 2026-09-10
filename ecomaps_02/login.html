@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Ecomaps</title>
+  <meta name="description" content="Acesse sua conta Ecomaps como doador ou coletor." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-bg"></div>
+
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <a class="brand brand-center" href="index.html">
+        <img src="assets/logo.png" alt="Logotipo Ecomaps" width="48" height="48" />
+        <span>Eco<strong>map</strong></span>
+      </a>
+
+      <!-- Seletor DOADOR / COLETOR -->
+      <div class="switch" role="tablist" aria-label="Tipo de usuário">
+        <button class="switch-btn active" id="tabDoador" role="tab" aria-selected="true" data-tipo="doador">DOADOR</button>
+        <button class="switch-btn" id="tabColetor" role="tab" aria-selected="false" data-tipo="coletor">COLETOR</button>
+      </div>
+
+      <h1 class="auth-title" id="loginTitulo">Acesse sua conta</h1>
+      <p class="auth-sub" id="loginTexto">Entre para gerenciar seus materiais e solicitar coletas.</p>
+
+      <!-- Área de mensagens (sucesso/erro) -->
+      <div class="alert" id="alerta" hidden></div>
+
+      <form id="formLogin" novalidate>
+        <div class="field">
+          <label for="identificador" id="labelIdentificador">E-mail ou telefone</label>
+          <input type="text" id="identificador" name="identificador" autocomplete="username" placeholder="voce@email.com" />
+          <small class="error" id="erroIdentificador"></small>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" autocomplete="current-password" placeholder="Sua senha" />
+          <small class="error" id="erroSenha"></small>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" id="lembrar" />
+          <span>Lembrar meus dados</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">ENTRAR</button>
+      </form>
+
+      <p class="auth-foot">
+        Ainda não possui cadastro?
+        <a id="linkCadastro" href="cadastro-doador.html">Criar conta de doador</a>
+      </p>
+      <p class="auth-foot"><a href="index.html">← Voltar para a página inicial</a></p>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar conta de doador — Ecomaps</title>
+  <meta name="description" content="Cadastre-se como doador no Ecomaps e solicite a coleta dos seus recicláveis." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-bg"></div>
+
+  <main class="auth-wrap">
+    <div class="auth-card auth-card-wide">
+      <a class="brand brand-center" href="index.html">
+        <img src="assets/logo.png" alt="Logotipo Ecomaps" width="48" height="48" />
+        <span>Eco<strong>map</strong></span>
+      </a>
+
+      <span class="badge badge-doador">Conta de Doador</span>
+      <h1 class="auth-title">Crie sua conta de doador</h1>
+      <p class="auth-sub">Cadastre seus dados para começar a reciclar.</p>
+
+      <div class="alert" id="alerta" hidden></div>
+
+      <form id="formDoador" novalidate>
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="João da Silva" />
+          <small class="error" id="erroNome"></small>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <!-- Máscara aplicada em js/cadastro.js -->
+            <input type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15" />
+            <small class="error" id="erroTelefone"></small>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="voce@email.com" />
+            <small class="error" id="erroEmail"></small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" placeholder="Rua das Flores, 100 — São Paulo/SP" />
+          <small class="error" id="erroEndereco"></small>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Mínimo 6 caracteres" />
+            <small class="error" id="erroSenha"></small>
+          </div>
+          <div class="field">
+            <label for="senha2">Confirmar senha</label>
+            <input type="password" id="senha2" placeholder="Repita a senha" />
+            <small class="error" id="erroSenha2"></small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">CADASTRAR</button>
+      </form>
+
+      <p class="auth-foot">Já possui uma conta? <a href="login.html">Entrar</a></p>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>

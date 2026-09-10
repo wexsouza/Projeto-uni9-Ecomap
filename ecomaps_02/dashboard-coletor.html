@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Coletor — Ecomaps</title>
+  <meta name="description" content="Painel do coletor Ecomaps: novas coletas, coletas aceitas e realizadas." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="dashboard-coletor.html">
+        <img src="assets/logo.png" alt="Logotipo Ecomaps" width="40" height="40" />
+        <span>Eco<strong>map</strong></span>
+      </a>
+      <div class="header-right">
+        <span class="badge badge-coletor">Coletor</span>
+        <button class="btn btn-ghost" id="btnSair">SAIR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="dash-hello">Olá, <span id="nomeUsuario">coletor</span>!</h1>
+      <p class="section-sub left">Acompanhe as coletas disponíveis e o seu histórico.</p>
+
+      <div class="cards-4">
+        <button class="dash-card" data-info="Aqui apareceriam as solicitações de coleta abertas perto de você.">
+          <span class="dash-ico">🔔</span><h3>Novas Coletas</h3><p>Solicitações disponíveis.</p>
+        </button>
+        <button class="dash-card" data-info="Aqui ficariam as coletas que você aceitou e ainda precisa realizar.">
+          <span class="dash-ico">✅</span><h3>Coletas Aceitas</h3><p>Suas coletas agendadas.</p>
+        </button>
+        <button class="dash-card" data-info="Aqui ficaria o histórico das coletas concluídas e os materiais recolhidos.">
+          <span class="dash-ico">📦</span><h3>Coletas Realizadas</h3><p>Histórico de coletas.</p>
+        </button>
+        <button class="dash-card" data-info="Aqui você editaria seus dados pessoais e sua região de atuação.">
+          <span class="dash-ico">👤</span><h3>Meu Perfil</h3><p>Seus dados de coletor.</p>
+        </button>
+      </div>
+
+      <div class="alert alert-info" id="alerta" hidden></div>
+
+      <section class="profile">
+        <h2>Meu perfil</h2>
+        <ul class="profile-list">
+          <li><strong>Nome</strong><span id="pNome">—</span></li>
+          <li><strong>CPF</strong><span id="pCpf">—</span></li>
+          <li><strong>Telefone</strong><span id="pTelefone">—</span></li>
+          <li><strong>E-mail</strong><span id="pEmail">—</span></li>
+          <li><strong>Endereço</strong><span id="pEndereco">—</span></li>
+          <li><strong>Estado civil</strong><span id="pEstadoCivil">—</span></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>Protótipo Ecomaps — dados armazenados apenas no navegador.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
