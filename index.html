@@ -7,171 +7,18 @@
   <meta name="description" content="Ecomaps conecta doadores de materiais recicláveis e coletores em São Paulo. Encontre pontos de coleta ou solicite a coleta em casa." />
   <link rel="icon" href="logo%20EcoMap/logo.jpeg" type="image/jpeg" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="Wall-E/walle-widget.css" />
 </head>
-<body>
-  <!-- ================= CABEÇALHO ================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="logo%20EcoMap/logo.jpeg" alt="Logotipo Ecomaps" width="40" height="40" />
-        <span>Eco<strong>map</strong></span>
-      </a>
-
-      <!-- Botão hambúrguer: visível apenas no mobile (ver style.css) -->
-      <button class="hamburger" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="main-nav" id="mainNav">
-        <a href="#inicio">Início</a>
-        <a href="#como-reciclar">Como Reciclar</a>
-        <a href="#pontos">Pontos de Coleta</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#corpo-docente">Equipe</a>
-        <a class="nav-cta" href="login.html">Entrar</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="inicio">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <h1>Transforme São Paulo através da Reciclagem</h1>
-      <p>Facilite o descarte correto, encontre pontos de coleta ou solicite a coleta em sua casa.</p>
-      <!-- Leva o usuário para a tela de login -->
-      <a class="btn btn-primary btn-lg" href="login.html">Quero Reciclar / Cadastrar Endereço</a>
-    </div>
-  </section>
-
-  <!-- ================= COMO FUNCIONA ================= -->
-  <section class="section" id="como-funciona">
-    <div class="container">
-      <h2 class="section-title">Como funciona</h2>
-      <p class="section-sub">Três passos simples para reciclar do jeito certo.</p>
-
-      <div class="cards-3">
-        <article class="card">
-          <div class="card-icon">
-            <!-- Ícone: materiais recicláveis -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.5a2.5 2.5 0 0 1-2.1-3.8L6 9"/><path d="M9 4.6a2.5 2.5 0 0 1 4.2 0L17 11"/><path d="M17 19h2.5a2.5 2.5 0 0 0 2.1-3.8L20 12"/><path d="m5 9 3-1.5M9 19l2-3h-4"/><path d="m18 12 3 1"/></svg>
-          </div>
-          <h3>1. Separe seus materiais</h3>
-          <p>Separe corretamente seus materiais recicláveis.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">
-            <!-- Ícone: endereço / localização -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>2. Cadastre seu endereço</h3>
-          <p>Informe seu endereço para encontrar opções de coleta.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">
-            <!-- Ícone: caminhão de coleta -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v9H2z"/><path d="M13 10h4l4 3v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-          </div>
-          <h3>3. Agende a coleta ou ache um ponto</h3>
-          <p>Solicite uma coleta ou encontre um ponto de coleta próximo.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= COMO RECICLAR ================= -->
-  <section class="section section-alt" id="como-reciclar">
-    <div class="container">
-      <h2 class="section-title">Como Reciclar</h2>
-      <ol class="steps">
-        <li><strong>Separe os materiais.</strong> Papel, plástico, vidro, metal e orgânicos em recipientes diferentes.</li>
-        <li><strong>Identifique o tipo de material.</strong> Limpe e seque embalagens antes de descartar.</li>
-        <li><strong>Procure um ponto de coleta ou solicite uma coleta.</strong> Use o Ecomaps para localizar a opção mais próxima.</li>
-        <li><strong>Entregue o material corretamente separado.</strong> Isso facilita o trabalho do coletor.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ================= PONTOS DE COLETA ================= -->
-  <section class="section" id="pontos">
-    <div class="container">
-      <h2 class="section-title">Pontos de Coleta</h2>
-      <p class="section-sub">Pontos de exemplo neste protótipo.</p>
-
-      <div class="cards-4">
-        <article class="point-card">
-          <span class="pin">📍</span>
-          <h3>Ponto de Coleta Centro</h3>
-          <p>Rua Sete de Abril, 120 — Centro</p>
-          <small>Seg a Sáb · 8h às 18h</small>
-        </article>
-        <article class="point-card">
-          <span class="pin">📍</span>
-          <h3>Ponto de Coleta Zona Norte</h3>
-          <p>Av. Santana, 455 — Santana</p>
-          <small>Seg a Sex · 9h às 17h</small>
-        </article>
-        <article class="point-card">
-          <span class="pin">📍</span>
-          <h3>Ponto de Coleta Zona Sul</h3>
-          <p>Rua das Acácias, 78 — Santo Amaro</p>
-          <small>Seg a Sáb · 8h às 16h</small>
-        </article>
-        <article class="point-card">
-          <span class="pin">📍</span>
-          <h3>Ponto de Coleta Zona Leste</h3>
-          <p>Av. Aricanduva, 3000 — Aricanduva</p>
-          <small>Ter a Dom · 9h às 18h</small>
-        </article>
-      </div>
-
-      <div class="center">
-        <a class="btn btn-outline" href="login.html">Ver pontos de coleta</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SOBRE ================= -->
-  <section class="section section-alt" id="sobre">
-    <div class="container narrow">
-      <h2 class="section-title">Sobre o Ecomaps</h2>
-      <p class="lead">
-        O Ecomaps é uma plataforma criada para facilitar a conexão entre pessoas que possuem
-        materiais recicláveis e coletores. Nosso objetivo é organizar o descarte correto,
-        dar visibilidade aos pontos de coleta da cidade e valorizar o trabalho de quem
-        recolhe e destina os materiais.
-      </p>
-      <div class="center">
-        <a class="btn btn-primary" href="login.html">Começar agora</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section faculty-section" id="corpo-docente">
-    <div class="container">
-      <h2 class="section-title">Corpo docente</h2>
-      <p class="section-sub">Conheça as pessoas que fazem parte do projeto EcoMap.</p>
-      <div class="faculty-grid">
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Wesley Souza"><span>Foto</span></div><h3>Wesley Souza</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Wesley Assis"><span>Foto</span></div><h3>Wesley Assis</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Otávio"><span>Foto</span></div><h3>Otávio</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Luana"><span>Foto</span></div><h3>Luana</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Lucas"><span>Foto</span></div><h3>Lucas</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Pedro"><span>Foto</span></div><h3>Pedro</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Vinícius"><span>Foto</span></div><h3>Vinícius</h3></article>
-        <article class="faculty-person"><div class="faculty-photo" aria-label="Espaço para foto de Vítor"><span>Foto</span></div><h3>Vítor</h3></article>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="ano"></span> Ecomaps — Protótipo acadêmico.
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+<body class="landing-body">
+  <header class="site-header landing-header"><div class="container header-inner"><a class="brand" href="#inicio"><img src="logo%20EcoMap/logo.jpeg" alt="Logo EcoMap" width="40" height="40"><span>Eco<strong>Map</strong><small>TECNOLOGIA PELO PLANETA</small></span></a><button class="hamburger" id="btnMenu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="mainNav"><a class="is-active" href="#inicio">Início</a><a href="#como-reciclar">Como Reciclar</a><a href="#pontos">Pontos de Coleta</a><a href="#sobre">Sobre Nós</a><a href="#corpo-docente">Equipe</a><a class="nav-cta" href="login.html">Entrar <span>→</span></a></nav></div></header>
+  <main class="landing-stage" id="landingStage">
+    <section class="landing-screen landing-hero-screen" id="inicio"><div class="landing-grid-lines"></div><div class="landing-container hero-layout"><div class="hero-copy"><span class="landing-eyebrow">ECOMAP / REDE DE RECICLAGEM INTELIGENTE</span><h1>Transforme São Paulo<br>através da <em>reciclagem.</em></h1><p>Facilite o descarte correto, encontre pontos de coleta ou solicite a coleta em sua casa.</p><div class="hero-actions"><a class="landing-btn landing-btn-primary" href="login.html">Quero reciclar <span>→</span></a><a class="landing-btn landing-btn-ghost" href="#como-reciclar">Como funciona <span>↓</span></a></div><div class="hero-note"><span>●</span> Uma atitude local pode mover uma cidade inteira.</div></div><div class="hero-visual"><div class="map-radar"><span></span><span></span><span></span><i class="map-pin pin-one">+</i><i class="map-pin pin-two">+</i><div class="landing-logo-orbit"><img src="logo%20EcoMap/logo.jpeg" alt="Logo EcoMap"></div></div><div class="hero-bubble">WALL-E <small>assistente ambiental</small></div></div></div><div class="screen-index"><b>01</b><span>/ 05</span><i></i><small>DESLIZE PARA EXPLORAR</small></div></section>
+    <section class="landing-screen process-screen" id="como-reciclar"><div class="landing-container"><div class="screen-heading"><span class="landing-eyebrow">01 — FLUXO ECO</span><h2>Como o EcoMap transforma<br><em>o descarte.</em></h2><p>Da identificação à coleta, cada etapa conecta pessoas, materiais e lugares.</p></div><div class="process-flow"><article><span>01</span><b>Separe os materiais</b><small>Plástico · Papel · Metal · Vidro</small></article><i>→</i><article><span>02</span><b>Identifique o material</b><small>O WALL-E pode ajudar você.</small></article><i>→</i><article><span>03</span><b>Cadastre o endereço</b><small>Informe onde ele está.</small></article><i>→</i><article><span>04</span><b>Encontre uma coleta</b><small>O mapa revela as opções.</small></article><i>→</i><article><span>05</span><b>Faça a coleta</b><small>O material volta ao ciclo.</small></article></div><div class="process-line-label"><b>MATERIAL</b><span>IDENTIFICAÇÃO</span><span>ENDEREÇO</span><span>MAPA</span><span>COLETA</span><b>RECICLAGEM</b></div></div><div class="screen-index"><b>02</b><span>/ 05</span><i></i><small>COMO FUNCIONA</small></div></section>
+    <section class="landing-screen map-screen" id="pontos"><div class="landing-container"><div class="screen-heading split-heading"><div><span class="landing-eyebrow">02 — ECO MAP</span><h2>Encontre pontos de coleta<br><em>perto de você.</em></h2><p>Localize opções de descarte e conecte-se à rede EcoMap.</p></div><a class="landing-btn landing-btn-primary" href="login.html">Acessar o mapa <span>→</span></a></div><div class="landing-map"><div class="map-surface"><span class="map-road road-a"></span><span class="map-road road-b"></span><span class="map-road road-c"></span><span class="map-region region-a">CENTRO</span><span class="map-region region-b">SANTANA</span><i class="map-point point-a">+</i><i class="map-point point-b">+</i><i class="map-point point-c">+</i><i class="map-point point-user">●</i><div class="map-label">MAPA ECOMAP <small>São Paulo / SP</small></div></div><aside class="point-list"><span class="landing-eyebrow">PONTOS EM DESTAQUE</span><article><i>+</i><div><b>Ponto de Coleta Centro</b><small>Rua Sete de Abril, 120</small><em>Seg a Sáb · 8h às 18h</em></div></article><article><i>+</i><div><b>Ponto de Coleta Zona Norte</b><small>Av. Santana, 455</small><em>Seg a Sex · 9h às 17h</em></div></article><article><i>+</i><div><b>Ponto de Coleta Zona Sul</b><small>Rua das Acácias, 78</small><em>Seg a Sáb · 8h às 16h</em></div></article></aside></div></div><div class="screen-index"><b>03</b><span>/ 05</span><i></i><small>MAPA EM FOCO</small></div></section>
+    <section class="landing-screen about-screen" id="sobre"><div class="landing-container"><div class="screen-heading centered-heading"><span class="landing-eyebrow">03 — NOSSA REDE</span><h2>Conectando pessoas,<br><em>tecnologia e sustentabilidade.</em></h2></div><div class="value-grid"><article><span>◎</span><b>Missão</b><p>Facilitar o descarte correto e conectar pessoas a soluções de coleta e reciclagem.</p></article><article><span>⌖</span><b>Visão</b><p>Construir uma rede mais acessível, tecnológica e sustentável para materiais recicláveis.</p></article><article><span>+</span><b>Valores</b><p>Sustentabilidade, responsabilidade, tecnologia, colaboração, acessibilidade e impacto.</p></article></div><p class="impact-phrase">Pequenas atitudes podem gerar <em>grandes impactos.</em></p></div><div class="screen-index"><b>04</b><span>/ 05</span><i></i><small>SOBRE O ECOMAP</small></div></section>
+    <section class="landing-screen team-screen" id="corpo-docente"><div class="landing-container"><div class="screen-heading split-heading"><div><span class="landing-eyebrow">04 — EQUIPE ECOMAP</span><h2>As pessoas por trás<br><em>do projeto.</em></h2><p>Um time acadêmico construindo novas rotas para o descarte consciente.</p></div><span class="team-count">08<br><small>pessoas</small></span></div><div class="team-grid"><article><div class="team-photo">Foto</div><b>Wesley Souza</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Wesley Assis</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Otávio</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Luana</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Lucas</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Pedro</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Vinícius</b><small>EcoMap team</small></article><article><div class="team-photo">Foto</div><b>Vítor</b><small>EcoMap team</small></article></div></div><div class="screen-index"><b>05</b><span>/ 05</span><i></i><small>EQUIPE</small></div></section>
+  </main>
+  <footer class="landing-footer"><span>EcoMap — Conectando pessoas e lugares por um futuro mais verde.</span><a href="login.html">Entrar na plataforma →</a></footer>
+  <script src="js/main.js"></script><script src="js/landing.js"></script><script src="Wall-E/walle-widget.js"></script>
 </body>
 </html>
