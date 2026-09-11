@@ -61,7 +61,7 @@ def question():
         response = OpenAI().responses.create(
             model="gpt-4o-mini",
             instructions=CHAT_INSTRUCTIONS,
-            max_output_tokens=220,
+            max_output_tokens=600,
             input=question_text,
         )
         return jsonify({"resposta": response.output_text})

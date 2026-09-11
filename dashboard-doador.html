@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Doador — Ecomaps</title>
+  <meta name="description" content="Painel do doador Ecomaps: materiais, solicitações de coleta e pontos de coleta." />
+  <link rel="icon" href="logo%20EcoMap/logo.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="doador.css" />
+  <link rel="stylesheet" href="Wall-E/walle-widget.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="dashboard-doador.html"><span class="dashboard-logo"><img src="logo%20EcoMap/logo.jpeg" alt="" /></span>EcoMap</a>
+    <div class="sidebar-intro">
+      <strong>Rede de reciclagem inteligente</strong>
+      <span>Criado por jovens da Universidade Nove de Julho</span>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="donor-navigation" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="topnav" id="donor-navigation" aria-label="Navegacao do doador">
+      <button class="top-link is-active" type="button" data-scroll="map-section"><span>⌖</span> Inicio / Mapa</button>
+      <button class="top-link" type="button" data-scroll="materials-section"><span>▦</span> Meus materiais</button>
+      <button class="top-link" type="button" data-scroll="donation-section"><span>♧</span> Solicitar coleta</button>
+      <button class="top-link" type="button" data-scroll="map-section"><span>◌</span> Minhas coletas</button>
+      <button class="top-link" type="button" data-scroll="history-section"><span>◫</span> Minhas solicitacoes</button>
+    </nav>
+    <div class="sidebar-walle-hint"><span>+</span><div><b>Precisa de ajuda?</b><small>Converse com o WALL-E</small></div></div>
+    <div class="profile-menu">
+      <button class="profile-chip" id="profileToggle" type="button" aria-expanded="false" aria-controls="profileDetails">
+        <span class="profile-avatar" id="profileAvatar">D</span><span id="nomeUsuario">Perfil do doador</span>
+      </button>
+      <div class="profile-details" id="profileDetails" hidden>
+        <strong id="profileName">Meu perfil</strong>
+        <button type="button" id="profileDataToggle">Ver meus dados</button>
+        <div class="profile-data" id="profileData" hidden>
+          <span><b>Nome</b><em id="pNome">—</em></span>
+          <span><b>Telefone</b><em id="pTelefone">—</em></span>
+          <span><b>Endereço</b><em id="pEndereco">—</em></span>
+          <span><b>E-mail</b><em id="pEmail">—</em></span>
+        </div>
+        <button class="profile-logout" id="btnSair" type="button">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="donor-main">
+    <header class="dashboard-header"><div><span class="dashboard-eyebrow">PAINEL DO DOADOR</span><p>Conectando pessoas e lugares por um futuro mais verde.</p></div><div class="dashboard-tools"><label class="dashboard-search">⌕<input type="search" placeholder="Buscar pontos, materiais..." aria-label="Buscar pontos e materiais"></label><button class="dashboard-icon" type="button" aria-label="Notificações">♢</button></div></header>
+    <section class="welcome-strip"><div><span class="dashboard-eyebrow">VISÃO GERAL</span><h1>Ola, <span data-user-name>usuario</span>.</h1><p>Que bom te ver por aqui. Vamos dar um novo destino aos seus materiais.</p></div><div class="impact-mini"><span>IMPACTO REGISTRADO</span><strong>0 <small>kg</small></strong><em>Ainda sem registros</em></div><div class="impact-mini"><span>ATIVIDADE</span><strong>0 <small>coletas</small></strong><em>Comece pelo mapa</em></div></section>
+
+    <div class="dashboard-grid">
+      <section class="map-section" id="map-section" aria-labelledby="map-title">
+        <div class="section-top"><div><span class="section-kicker">MAPA AO VIVO</span><h1 id="map-title">Pontos perto de voce</h1><p>Explore materiais disponíveis e encontre uma nova rota de reciclagem.</p></div><span class="map-status">3 pontos ativos</span></div>
+        <div class="map-toolbar"><button class="map-filter active" type="button">⌖ Pontos de coleta</button><button class="map-filter" type="button">♻ Reciclaveis</button><button class="map-filter" type="button">◎ Minha localizacao</button></div>
+        <div id="donor-map" aria-label="Mapa de pontos de coleta"></div>
+        <div class="map-legend"><span><i class="legend-dot green"></i> Pontos de coleta</span><span><i class="legend-dot"></i> Materiais disponíveis</span><span><i class="legend-dot blue"></i> Minha localização</span></div>
+      </section>
+
+      <aside class="side-rail">
+        <section class="data-card materials-card" id="materials-section"><div class="data-card-head"><div><span class="section-kicker">SEU INVENTARIO</span><h2>Materiais recentes</h2></div><span class="data-count">0</span></div><div class="empty-data"><span>◌</span><p>Nenhum material registrado ainda.</p><small>Os materiais que voce disponibilizar aparecerao aqui.</small></div></section>
+        <section class="donation-section" id="donation-section" aria-labelledby="donation-title">
+          <div class="section-top compact"><div><span class="section-kicker">NOVA ACAO</span><h2 id="donation-title">Solicitar coleta</h2><p>Coloque um reciclavel no mapa para conecta-lo a um agente.</p></div></div>
+          <form id="donation-form" class="donation-form">
+            <label id="materials-section">Nome do material<input id="material-name" required type="text" placeholder="Ex.: garrafas PET"></label>
+            <label>Tipo de material<select id="material-type" required><option value="">Selecione</option><option value="plastico">Plastico</option><option value="papel">Papel</option><option value="metal">Metal</option><option value="vidro">Vidro</option><option value="eletronico">Eletronico</option><option value="textil">Textil</option></select></label>
+            <label>Quantidade aproximada (opcional)<input id="material-quantity" type="text" placeholder="Ex.: 2 kg ou 10 unidades"></label>
+            <label>Endereco do material<input id="donation-address" required type="text" placeholder="Rua, avenida e numero"></label>
+            <label>Cidade<input id="donation-city" required type="text" value="Sao Paulo" placeholder="Ex.: Itapevi"></label>
+            <label>CEP<input id="donation-cep" required type="text" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" placeholder="00000-000"></label>
+            <label class="check-label"><input id="material-clean" type="checkbox"> Material limpo e separado</label>
+            <button class="primary-button submit-donation" type="submit">Colocar no mapa</button>
+            <p class="form-status" id="donation-status" role="status"></p>
+          </form>
+        </section>
+
+        <section class="history-section" id="history-section" aria-labelledby="history-title">
+          <div class="history-head"><div><span class="section-kicker">ACOMPANHAMENTO</span><h2 id="history-title">Minhas solicitacoes</h2></div><span class="data-count">0</span></div>
+          <div class="empty-data compact-empty"><span>◫</span><p>Voce ainda nao tem solicitacoes.</p><small>Suas coletas agendadas aparecerao aqui.</small></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="doador.js"></script>
+  <script src="Wall-E/walle-widget.js"></script>
+  <script>
+    (function () {
+      var toggle = document.getElementById('profileToggle');
+      var details = document.getElementById('profileDetails');
+      var dataToggle = document.getElementById('profileDataToggle');
+      var data = document.getElementById('profileData');
+      toggle.addEventListener('click', function () {
+        var open = details.hidden;
+        details.hidden = !open;
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      dataToggle.addEventListener('click', function () {
+        data.hidden = !data.hidden;
+        dataToggle.textContent = data.hidden ? 'Ver meus dados' : 'Ocultar meus dados';
+      });
+    }());
+  </script>
+</body>
+</html>

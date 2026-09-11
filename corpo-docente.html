@@ -1,8 +1,44 @@
-<!--
-  ⚠️ RESPONSÁVEL: Lucas e Victor
-  Tarefa: montar a página do corpo docente.
-  O objetivo é mostrar os docentes de forma organizada, com os nomes e destaques de cada um.
-  A estrutura ideal é alinhar as pessoas em blocos, com no máximo 3 por linha e, se houver 7 integrantes, deixar a última separada das demais.
-  Essa página precisa ter um layout limpo, visualmente bem distribuído e fácil de ler.
-  Quando a implementação estiver pronta, esse comentário pode ser removido.
--->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corpo docente | EcoMap</title>
+  <link rel="icon" href="logo%20EcoMap/logo.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="logo%20EcoMap/logo.jpeg" alt="Logotipo Ecomaps" width="40" height="40">
+        <span>Eco<strong>map</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegacao principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#corpo-docente">Equipe</a>
+        <a class="nav-cta" href="login.html">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section faculty-section" id="corpo-docente">
+      <div class="container">
+        <h1 class="section-title">Corpo docente</h1>
+        <p class="section-sub">Conheca as pessoas que fazem parte do projeto EcoMap.</p>
+        <div class="faculty-grid">
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Wesley Souza"><span>Foto</span></div><h2>Wesley Souza</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Wesley Assis"><span>Foto</span></div><h2>Wesley Assis</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Otavio"><span>Foto</span></div><h2>Otavio</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Luana"><span>Foto</span></div><h2>Luana</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Lucas"><span>Foto</span></div><h2>Lucas</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Pedro"><span>Foto</span></div><h2>Pedro</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Vinicius"><span>Foto</span></div><h2>Vinicius</h2></article>
+          <article class="faculty-person"><div class="faculty-photo" aria-label="Espaco para foto de Vitor"><span>Foto</span></div><h2>Vitor</h2></article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

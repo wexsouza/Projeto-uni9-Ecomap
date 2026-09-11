@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Ecomaps</title>
+  <meta name="description" content="Acesse sua conta Ecomaps como doador ou coletor." />
+  <link rel="icon" href="logo%20EcoMap/logo.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="Wall-E/walle-widget.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+  <main class="login-shell">
+    <section class="login-showcase" aria-label="Sobre o EcoMap">
+      <a class="login-brand" href="index.html"><span class="login-brand-mark"><img src="logo%20EcoMap/logo.jpeg" alt="" /></span><span><b>Eco</b>Map<small>Conectando pessoas e lugares por um futuro mais verde.</small></span></a>
+      <div class="login-topline">TECNOLOGIA <i></i> SUSTENTABILIDADE</div>
+      <div class="login-robot" aria-hidden="true"><span class="robot-orbit"></span><span class="robot-body"><img src="logo%20EcoMap/logo.jpeg" alt="" /><span class="robot-leaf">+</span></span></div>
+      <div class="login-quote">Juntos por<br><em>um planeta melhor.</em></div>
+      <div class="login-showcase-copy"><span class="login-kicker">WALL-E / assistente ambiental</span><h2>Seu guia para escolhas<br>mais sustentáveis.</h2><div class="login-capabilities"><span>↗ Identifique materiais</span><span>⌖ Encontre pontos de coleta</span><span>+ Tire dúvidas sobre sustentabilidade</span></div></div>
+    </section>
+
+    <section class="auth-card login-panel" aria-labelledby="loginTitulo">
+      <div class="login-panel-top"><span>EcoMap / acesso seguro</span><a href="index.html" aria-label="Voltar para a página inicial">←</a></div>
+      <span class="login-line"></span>
+      <p class="login-eyebrow">Bem-vindo(a) ao EcoMap</p>
+      <h1 class="auth-title" id="loginTitulo">Acesse sua conta<br>e faça parte de um<br><em>futuro mais sustentável.</em></h1>
+      <p class="auth-sub" id="loginTexto">Entre com seus dados para continuar.</p>
+
+      <div class="switch login-profiles" role="tablist" aria-label="Escolha seu perfil">
+        <button class="switch-btn active" id="tabDoador" role="tab" aria-selected="true" data-tipo="doador"><span>♧</span><b> Doador</b><small>Quero descartar e reciclar</small></button>
+        <button class="switch-btn" id="tabColetor" role="tab" aria-selected="false" data-tipo="coletor"><span>⌁</span><b> Agente de coleta</b><small>Quero coletar materiais</small></button>
+      </div>
+
+      <div class="alert" id="alerta" hidden></div>
+      <form id="formLogin" novalidate>
+        <div class="field login-field"><label for="identificador" id="labelIdentificador">E-mail ou telefone</label><span class="field-symbol">@</span><input type="text" id="identificador" name="identificador" autocomplete="username" placeholder="voce@email.com" /><small class="error" id="erroIdentificador"></small></div>
+        <div class="field login-field"><label for="senha">Senha</label><span class="field-symbol">◇</span><input type="password" id="senha" name="senha" autocomplete="current-password" placeholder="Digite sua senha" /><button class="password-toggle" type="button" aria-label="Mostrar senha">◉</button><small class="error" id="erroSenha"></small></div>
+        <div class="login-options"><label class="checkbox"><input type="checkbox" id="lembrar" /><span>Lembrar de mim</span></label><a href="#" class="login-muted-link" aria-label="Recuperação de senha ainda não disponível">Esqueceu sua senha?</a></div>
+        <button type="submit" class="btn btn-primary btn-block login-submit"><span>Entrar</span><b>→</b></button>
+      </form>
+      <div class="login-divider"><span>ou</span></div>
+      <button class="login-social" type="button" disabled aria-label="Login com Google indisponível"><span>G</span> Entrar com Google</button>
+      <p class="auth-foot login-register">Ainda não tem uma conta? <a id="linkCadastro" href="cadastro-doador.html">Cadastre-se</a></p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
+  <script src="Wall-E/walle-widget.js"></script>
+  <script>
+    (function () {
+      var toggle = document.querySelector('.password-toggle');
+      var password = document.getElementById('senha');
+      if (toggle && password) toggle.addEventListener('click', function () { var visible = password.type === 'text'; password.type = visible ? 'password' : 'text'; toggle.setAttribute('aria-label', visible ? 'Mostrar senha' : 'Ocultar senha'); });
+    }());
+  </script>
+</body>
+</html>

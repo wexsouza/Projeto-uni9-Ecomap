@@ -18,6 +18,16 @@ button, input, select { font: inherit; }
 .top-link:hover, .top-link.is-active { background: rgba(184,216,91,.16); color: #fff; }
 .profile-chip { align-items: center; border-left: 1px solid rgba(255,255,255,.25); color: #c9e3d7; display: flex; font-size: 12px; gap: 8px; padding-left: 25px; white-space: nowrap; }
 .profile-avatar { align-items: center; background: #d7eee2; border-radius: 50%; color: var(--green); display: inline-flex; font-size: 12px; font-weight: bold; height: 28px; justify-content: center; width: 28px; }
+.profile-menu { position: fixed; right: 28px; top: 18px; z-index: 40; }
+.profile-menu .profile-chip { background: rgba(7,61,51,.94); border: 1px solid rgba(215,238,226,.35); border-radius: 999px; cursor: pointer; padding: 7px 12px 7px 8px; }
+.profile-details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); color: var(--ink); display: grid; gap: 10px; margin-top: 8px; min-width: 230px; padding: 14px; position: absolute; right: 0; }
+.profile-details[hidden], .profile-data[hidden] { display: none; }
+.profile-details button { background: transparent; border: 0; color: var(--green); cursor: pointer; font-size: 12px; padding: 0; text-align: left; }
+.profile-details .profile-logout { border-top: 1px solid var(--line); padding-top: 10px; }
+.profile-data { border-top: 1px solid var(--line); display: grid; gap: 8px; padding-top: 10px; }
+.profile-data span { display: grid; gap: 2px; }
+.profile-data b { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.profile-data em { font-size: 12px; font-style: normal; overflow-wrap: anywhere; }
 .donor-main { margin: 0 auto; max-width: 1440px; padding: 34px clamp(16px, 4vw, 52px) 60px; }
 .main-header { align-items: end; display: flex; justify-content: space-between; margin-bottom: 18px; }
 .company-mark { align-items: center; display: flex; flex-direction: column; gap: 5px; margin: 0 auto 28px; text-align: center; }
@@ -77,6 +87,86 @@ input:focus, select:focus { border-color: var(--green); outline: 3px solid var(-
 .leaflet-container { border-top: 1px solid var(--line); filter: saturate(.82) contrast(.98); }
 .leaflet-control-zoom a { color: var(--green) !important; }
 
+/* ---------- Dashboard EcoMap / dark map workspace ---------- */
+body {
+	background: radial-gradient(circle at 74% 8%, rgba(21, 102, 81, .18), transparent 25%), #071614;
+	color: #e7f8ef;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+}
+.topbar { background: #091f1c; border-right: 1px solid rgba(104, 211, 165, .14); box-shadow: 8px 0 30px rgba(0, 10, 8, .18); }
+.topbar::after { background: #5cdda0; box-shadow: 0 0 12px rgba(92, 221, 160, .5); }
+.brand { align-items: center; display: flex; gap: 10px; letter-spacing: .04em; }
+.dashboard-logo { align-items: center; background: #effff5; border: 1px solid #70d9a6; border-radius: 10px; display: inline-flex; height: 32px; justify-content: center; overflow: hidden; width: 32px; }
+.dashboard-logo img { height: 25px; mix-blend-mode: multiply; width: 25px; }
+.sidebar-intro strong { color: #e5f8ee; }
+.sidebar-intro span { color: #78a895; }
+.top-link { color: #86aa9b; transition: background .18s ease, color .18s ease, transform .18s ease; }
+.top-link span { color: #65dba2; display: inline-block; font-size: 16px; margin-right: 9px; width: 18px; }
+.top-link:hover, .top-link.is-active { background: rgba(53, 174, 123, .15); color: #effff7; transform: translateX(2px); }
+.profile-menu .profile-chip { background: rgba(8, 31, 27, .95); border-color: rgba(107, 211, 169, .24); color: #d8f5e6; }
+.profile-avatar { background: #b9ead1; color: #0c5540; }
+.sidebar-walle-hint { align-items: center; background: rgba(40, 126, 91, .13); border: 1px solid rgba(105, 211, 165, .18); border-radius: 12px; bottom: 26px; color: #c6ead9; display: flex; gap: 9px; left: 16px; padding: 11px; position: absolute; right: 16px; }
+.sidebar-walle-hint > span { align-items: center; background: #2b9b72; border-radius: 50%; color: white; display: flex; height: 26px; justify-content: center; width: 26px; }
+.sidebar-walle-hint b, .sidebar-walle-hint small { display: block; }
+.sidebar-walle-hint b { font-size: 11px; }
+.sidebar-walle-hint small { color: #78ab95; font-size: 9px; margin-top: 3px; }
+.donor-main { padding-top: 26px; }
+.company-mark { display: none; }
+.dashboard-header { align-items: center; display: flex; justify-content: space-between; margin-bottom: 24px; }
+.dashboard-eyebrow { color: #5fd99e; display: block; font-size: 10px; font-weight: 700; letter-spacing: .17em; }
+.dashboard-header p { color: #71998a; font-size: 12px; margin-top: 7px; }
+.dashboard-tools { align-items: center; display: flex; gap: 10px; }
+.dashboard-search { align-items: center; background: rgba(14, 45, 38, .72); border: 1px solid rgba(105, 190, 158, .18); border-radius: 9px; color: #66dca4; display: flex; gap: 8px; padding: 8px 11px; width: 250px; }
+.dashboard-search input { background: transparent; border: 0; color: #eafff3; outline: 0; width: 100%; }
+.dashboard-search input::placeholder { color: #658b7b; }
+.dashboard-icon { background: rgba(14, 45, 38, .72); border: 1px solid rgba(105, 190, 158, .18); border-radius: 9px; color: #70dca6; cursor: pointer; height: 36px; width: 36px; }
+.welcome-strip { align-items: stretch; display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr) 160px 160px; margin-bottom: 20px; }
+.welcome-strip > div:first-child, .impact-mini { background: rgba(13, 40, 34, .72); border: 1px solid rgba(105, 190, 158, .17); border-radius: 14px; padding: 18px 20px; }
+.welcome-strip h1 { color: #effff7; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 25px; margin: 7px 0 4px; }
+.welcome-strip p { color: #82a998; font-size: 12px; }
+.impact-mini { display: flex; flex-direction: column; justify-content: center; }
+.impact-mini span { color: #6da995; font-size: 9px; letter-spacing: .1em; }
+.impact-mini strong { color: #e9fff3; font-size: 27px; line-height: 1; margin-top: 9px; }
+.impact-mini strong small { color: #70dca5; font-size: 11px; font-weight: normal; }
+.impact-mini em { color: #6f9e8a; font-size: 9px; font-style: normal; margin-top: 7px; }
+.map-section, .donation-section, .history-section, .data-card { background: rgba(10, 34, 30, .78); border: 1px solid rgba(105, 190, 158, .18); border-radius: 15px; box-shadow: 0 20px 50px rgba(0, 12, 9, .2); }
+.section-top { padding: 20px 22px 14px; }
+.section-top h2, .history-section h2, .data-card h2 { color: #e4f8ed; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 18px; margin-top: 6px; }
+.section-top h1 { color: #e4f8ed; font-family: "Trebuchet MS", Arial, sans-serif; font-size: 25px; margin-top: 6px; }
+.section-top p { color: #719b89; }
+.map-status { background: rgba(53, 174, 123, .13); border-color: rgba(93, 215, 158, .25); color: #71dfa9; }
+.map-toolbar { display: flex; gap: 7px; padding: 0 22px 13px; }
+.map-filter { background: transparent; border: 1px solid rgba(105, 190, 158, .2); border-radius: 999px; color: #86aa9b; cursor: pointer; font-size: 10px; padding: 7px 10px; }
+.map-filter.active, .map-filter:hover { background: rgba(53, 174, 123, .18); border-color: #4bc48b; color: #dfffee; }
+#donor-map { background: #0a2725; border-top: 1px solid rgba(105, 190, 158, .15); filter: saturate(.68) brightness(.72) contrast(1.08); height: 450px; }
+.leaflet-container { border-top: 0; }
+.map-legend { color: #789f8e; padding: 11px 22px 14px; }
+.legend-dot { background: #e0ba4e; border-color: #153b31; box-shadow: 0 0 7px rgba(224, 186, 78, .35); }
+.legend-dot.green { background: #55d99c; box-shadow: 0 0 7px rgba(85, 217, 156, .45); }
+.legend-dot.blue { background: #63a8f4; }
+.side-rail { gap: 14px; }
+.data-card { padding: 18px; }
+.data-card-head, .history-head { align-items: center; display: flex; justify-content: space-between; }
+.data-count { align-items: center; background: rgba(53, 174, 123, .12); border: 1px solid rgba(105, 190, 158, .2); border-radius: 8px; color: #76dda9; display: inline-flex; font-size: 12px; height: 28px; justify-content: center; min-width: 28px; }
+.empty-data { align-items: center; border: 1px dashed rgba(105, 190, 158, .2); border-radius: 10px; color: #7ea694; display: flex; flex-direction: column; margin-top: 15px; padding: 20px 12px; text-align: center; }
+.empty-data > span { color: #62d9a0; font-size: 24px; }
+.empty-data p { color: #b6d8c7; font-size: 11px; margin-top: 7px; }
+.empty-data small { color: #6e9685; font-size: 9px; margin-top: 4px; }
+.compact-empty { margin-top: 13px; padding: 14px 8px; }
+.donation-section { overflow: visible; padding-bottom: 18px; }
+.donation-form { gap: 10px; padding: 0 20px; }
+.donation-form label { color: #7fa392; font-size: 10px; }
+.address-row input, .donation-form input, .donation-form select { background: rgba(4, 23, 20, .66); border-color: rgba(105, 190, 158, .2); border-radius: 8px; color: #e5f9ed; padding: 10px 11px; }
+.donation-form input::placeholder { color: #5e8173; }
+.donation-form input:focus, .donation-form select:focus { border-color: #54d59a; box-shadow: 0 0 0 3px rgba(73, 205, 143, .1); outline: 0; }
+.primary-button { background: linear-gradient(110deg, #238a68, #319e75); border-radius: 8px; min-height: 40px; }
+.history-section { padding: 18px; }
+.history-section h2 { margin-top: 6px; }
+
+@media (max-width: 900px) { .welcome-strip { grid-template-columns: 1fr 1fr; } .welcome-strip > div:first-child { grid-column: 1 / -1; } .dashboard-search { width: 190px; } }
+@media (max-width: 760px) { .dashboard-header { align-items: flex-start; flex-direction: column; gap: 14px; } .dashboard-tools, .dashboard-search { width: 100%; } .dashboard-icon { flex: 0 0 36px; } .sidebar-walle-hint { display: none; } .welcome-strip { grid-template-columns: 1fr 1fr; } .map-toolbar { overflow-x: auto; } }
+@media (max-width: 520px) { .welcome-strip { grid-template-columns: 1fr; } .welcome-strip > div:first-child { grid-column: auto; } .map-toolbar { padding-left: 16px; padding-right: 16px; } .map-filter { white-space: nowrap; } #donor-map { height: 360px; } }
+
 @media (max-width: 760px) {
 	.topbar { min-height: 72px; }
 	.company-mark { margin-top: 2px; }
@@ -84,6 +174,7 @@ input:focus, select:focus { border-color: var(--green); outline: 3px solid var(-
 }
 
 @media (max-width: 420px) {
+	.profile-menu { right: 12px; top: 12px; }
 	.brand { font-size: 24px; }
 	.sidebar-intro { min-width: 0; padding: 0; }
 	.sidebar-intro strong { font-size: 15px; }

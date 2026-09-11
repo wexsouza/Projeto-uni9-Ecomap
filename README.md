@@ -1,5 +1,30 @@
 ## EcoMap
 
+## Configuração segura da IA
+
+O WALL-E usa a chave da OpenAI somente no backend Flask. A chave nunca deve
+ser colocada em HTML, JavaScript ou commitada no GitHub.
+
+### Ambiente local
+
+1. Copie `Wall-E/.env.example` para `Wall-E/.env`.
+2. Substitua o valor de `OPENAI_API_KEY` pela chave real.
+3. Instale as dependências com `pip install -r requirements.txt`.
+4. Inicie o backend com `python Wall-E/app.py`.
+
+O arquivo `Wall-E/.env` já está protegido pelo `.gitignore`.
+
+### Render
+
+No serviço do Render, abra **Environment** e crie a variável privada
+`OPENAI_API_KEY` usando o mesmo valor guardado no GitHub Secret. O GitHub Secret
+não é disponibilizado automaticamente para aplicações hospedadas no Render;
+ele precisa ser cadastrado no ambiente de execução ou enviado por um workflow
+de deploy seguro.
+
+O frontend conversa somente com `/api/walle/pergunta` e
+`/api/walle/analisar`. A chave permanece exclusivamente no servidor.
+
 ## ODS Escolhido: Qual Objetivo de Desenvolvimento Sustentável o projeto ataca e por quê?
 O EcoMap está alinhado principalmente ao ODS 12 – Consumo e Produção Responsáveis, pois busca incentivar o descarte correto, a reutilização e a reciclagem de materiais. O projeto reduz a falta de informação sobre pontos de coleta e conecta pessoas que desejam descartar materiais a agentes responsáveis pela coleta, contribuindo para a diminuição de resíduos, o melhor aproveitamento de recursos e a redução dos impactos ambientais.
 
