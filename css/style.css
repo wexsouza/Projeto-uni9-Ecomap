@@ -995,6 +995,67 @@ a:hover {
 .landing-footer a { color: #68dca5; }
 @media (max-width: 760px) { .landing-footer { display: none; } }
 
+/* ---------- Mapa da landing sem rolagem interna ---------- */
+.landing-screen.map-screen { overflow: hidden; padding-bottom: 54px; padding-top: 96px; }
+.map-screen .screen-heading { align-items: end; display: flex; justify-content: space-between; }
+.map-screen .screen-heading > div { text-align: left; }
+.map-screen .screen-heading h2 { margin-bottom: 9px; }
+.map-screen .landing-map { height: min(430px, calc(100dvh - 285px)); margin-top: 22px; }
+
+@media (max-height: 760px) and (min-width: 761px) {
+  .landing-screen.map-screen { padding-top: 86px; }
+  .map-screen .landing-map { height: calc(100dvh - 245px); margin-top: 15px; min-height: 285px; }
+}
+
+@media (max-width: 760px) {
+  .landing-screen.map-screen { padding-top: 88px; }
+  .map-screen .screen-heading { align-items: start; display: block; }
+  .map-screen .screen-heading .landing-btn { margin-top: 12px; }
+  .map-screen .landing-map { height: calc(100dvh - 242px); margin-top: 16px; min-height: 0; }
+  .map-screen .map-surface { height: clamp(205px, 34vh, 280px); }
+  .map-screen .point-list { min-height: 0; padding: 9px 12px; }
+  .map-screen .point-list article { padding: 5px 0; }
+}
+
+/* ---------- Landing responsiva: conteudo sempre acessivel ---------- */
+.landing-screen { height: 100dvh; overflow-y: auto; padding-bottom: 78px; scrollbar-width: thin; scrollbar-color: rgba(91, 211, 157, .35) transparent; }
+.landing-screen::-webkit-scrollbar { width: 5px; }
+.landing-screen::-webkit-scrollbar-thumb { background: rgba(91, 211, 157, .35); border-radius: 99px; }
+.screen-index { display: none; }
+.hero-layout { min-height: calc(100dvh - 190px); }
+.hero-visual { max-height: min(48vh, 480px); }
+.landing-map { height: min(430px, calc(100dvh - 310px)); min-height: 310px; }
+.map-surface { min-height: 0; }
+.process-flow { margin-top: clamp(25px, 7vh, 70px); }
+.value-grid { margin-bottom: clamp(25px, 6vh, 50px); margin-top: clamp(28px, 7vh, 68px); }
+.team-grid { margin-top: clamp(20px, 5vh, 32px); }
+
+@media (max-height: 760px) and (min-width: 761px) {
+  .landing-screen { padding-bottom: 64px; padding-top: 92px; }
+  .hero-layout { min-height: calc(100dvh - 150px); }
+  .hero-copy h1 { font-size: clamp(2.1rem, 4.2vw, 3.5rem); margin: 12px 0; }
+  .hero-copy p { font-size: .86rem; }
+  .hero-actions { margin-top: 18px; }
+  .hero-note { margin-top: 20px; }
+  .login-robot { height: 180px; }
+  .process-screen, .map-screen, .about-screen, .team-screen { padding-top: 96px; }
+  .screen-heading h2 { font-size: clamp(1.9rem, 3.4vw, 3rem); margin: 10px 0; }
+  .process-flow { margin-top: 25px; }
+  .process-flow article { min-height: 130px; padding: 14px; }
+  .landing-map { height: calc(100dvh - 300px); min-height: 285px; }
+  .team-photo { height: 82px; }
+}
+
+@media (max-width: 760px) {
+  .landing-screen { padding-bottom: 34px; padding-top: 88px; }
+  .hero-layout { min-height: auto; }
+  .hero-visual { max-height: none; }
+  .hero-copy h1 { margin-top: 13px; }
+  .landing-map { height: auto; min-height: 0; }
+  .map-surface { height: clamp(250px, 42vh, 340px); }
+  .point-list { min-height: 145px; }
+}
+
 /* ---------- Compactacao final da entrada ---------- */
 .login-shell {
   grid-template-columns: minmax(0, 1fr) minmax(400px, 500px);
