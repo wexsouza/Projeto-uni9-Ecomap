@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  var apiUrl = window.WALLE_API_URL || "/api/walle/analisar";
+  var apiBase = window.WALLE_API_BASE || (window.location.protocol === "file:" ? "http://127.0.0.1:5000" : "");
+  var apiUrl = window.WALLE_API_URL || apiBase + "/api/walle/analisar";
   var widget = document.createElement("section");
   widget.className = "walle-widget";
   widget.setAttribute("aria-label", "Assistente WALL-E");
@@ -147,11 +148,11 @@
     addChatMessage(question, "is-user");
     addChatMessage("Vou pensar nisso...", "is-walle");
     try {
-      var response = await fetch(window.WALLE_CHAT_URL || "/api/walle/pergunta", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pergunta: question }) });
+      var response = await fetch(window.WALLE_CHAT_URL || apiBase + "/api/walle/pergunta", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pergunta: question }) });
       var data = await readJsonResponse(response);
       if (!response.ok) throw new Error(data.erro || "Nao foi possivel responder agora.");
       chatLog.lastChild.textContent = data.resposta;
-    } catch (error) { chatLog.lastChild.textContent = "No momento, use a identificacao por imagem ou consulte o ponto de coleta local."; }
+    } catch (error) { chatLog.lastChild.textContent = error.message || "Nao foi possivel conectar ao WALL-E. Inicie o backend Flask e verifique a chave da OpenAI."; }
   }
 
   widget.querySelectorAll("[data-question]").forEach(function (button) {

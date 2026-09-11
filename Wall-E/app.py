@@ -1,89 +1,297 @@
-import json
 import os
 import tempfile
 from pathlib import Path
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request, send_from_directory
-from openai import OpenAI
 
-from ai import CHAT_INSTRUCTIONS, analisar_imagem
+from ai import (
+    CHAT_INSTRUCTIONS,
+    analisar_imagem,
+    get_openai_client,
+)
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(Path(__file__).with_name(".env"))
+# ---------------------------------------------------------
+# CONFIGURAÇÃO
+# ---------------------------------------------------------
+
+BASE_DIR = Path(__file__).resolve().parent
+
+load_dotenv(BASE_DIR / ".env")
+load_dotenv(BASE_DIR.parent / ".env")
+
+
+PROJECT_ROOT = BASE_DIR.parent
+
 
 app = Flask(__name__)
+
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
 
-def _error(message: str, status: int = 400):
-    return jsonify({"erro": message}), status
+# ---------------------------------------------------------
+# ERROS
+# ---------------------------------------------------------
 
+def _error(message: str, status: int = 400):
+    return jsonify({
+        "erro": message
+    }), status
+
+
+# ---------------------------------------------------------
+# HEALTH CHECK
+# ---------------------------------------------------------
 
 @app.get("/api/health")
 def health():
-    return jsonify({"ok": True})
 
+    configured = bool(
+        os.getenv("OPENAI_API_KEY")
+    )
+
+    return jsonify({
+        "ok": True,
+        "openai_configurada": configured
+    })
+
+
+# ---------------------------------------------------------
+# TESTE DA OPENAI
+# ---------------------------------------------------------
+
+@app.get("/api/walle/status")
+def walle_status():
+
+    try:
+
+        get_openai_client()
+
+        return jsonify({
+            "ok": True,
+            "walle": "online",
+            "openai": "configurada"
+        })
+
+    except Exception:
+
+        return jsonify({
+            "ok": False,
+            "walle": "offline",
+            "openai": "não configurada"
+        }), 503
+
+
+# ---------------------------------------------------------
+# ANALISAR IMAGEM
+# ---------------------------------------------------------
 
 @app.post("/api/walle/analisar")
 def analyze():
-    image = request.files.get("imagem")
-    if image is None or not image.filename:
-        return _error("Envie uma imagem no campo 'imagem'.")
 
-    suffix = Path(image.filename).suffix.lower()
-    if image.mimetype not in {"image/jpeg", "image/png", "image/webp", "image/gif"}:
-        return _error("Formato de imagem nao suportado.")
+    image = request.files.get("imagem")
+
+    if image is None or not image.filename:
+        return _error(
+            "Envie uma imagem no campo 'imagem'."
+        )
+
+    supported_types = {
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/gif",
+    }
+
+    if image.mimetype not in supported_types:
+
+        return _error(
+            "Formato de imagem não suportado."
+        )
 
     temporary_path = None
-    try:
-        with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as temporary_file:
-            image.save(temporary_file)
-            temporary_path = temporary_file.name
-        return jsonify(analisar_imagem(temporary_path))
-    except Exception as error:
-        app.logger.exception("Falha ao analisar imagem")
-        return _error(f"Nao foi possivel analisar a imagem: {error}", 502)
-    finally:
-        if temporary_path:
-            Path(temporary_path).unlink(missing_ok=True)
 
+    try:
+
+        with tempfile.NamedTemporaryFile(
+            suffix=Path(image.filename).suffix.lower(),
+            delete=False
+        ) as temporary_file:
+
+            image.save(temporary_file)
+
+            temporary_path = temporary_file.name
+
+        resultado = analisar_imagem(
+            temporary_path
+        )
+
+        return jsonify(resultado)
+
+    except Exception:
+
+        app.logger.exception(
+            "Falha ao analisar imagem"
+        )
+
+        return _error(
+            "Não foi possível analisar a imagem. "
+            "Verifique a configuração da IA e tente novamente.",
+            502
+        )
+
+    finally:
+
+        if temporary_path:
+
+            Path(
+                temporary_path
+            ).unlink(
+                missing_ok=True
+            )
+
+
+# ---------------------------------------------------------
+# CONVERSA COM WALL-E
+# ---------------------------------------------------------
 
 @app.post("/api/walle/pergunta")
 def question():
-    body = request.get_json(silent=True) or {}
-    question_text = str(body.get("pergunta", "")).strip()
+
+    body = request.get_json(
+        silent=True
+    ) or {}
+
+    question_text = str(
+        body.get("pergunta", "")
+    ).strip()
+
     if not question_text:
-        return _error("Envie uma pergunta.")
+
+        return _error(
+            "Envie uma pergunta."
+        )
+
+    if len(question_text) > 4000:
+
+        return _error(
+            "A pergunta é muito grande."
+        )
 
     try:
-        response = OpenAI().responses.create(
-            model="gpt-4o-mini",
+
+        client = get_openai_client()
+
+        response = client.responses.create(
+
+            model=os.getenv(
+                "OPENAI_MODEL",
+                "gpt-4o-mini"
+            ),
+
             instructions=CHAT_INSTRUCTIONS,
+
             max_output_tokens=600,
+
             input=question_text,
         )
-        return jsonify({"resposta": response.output_text})
-    except Exception as error:
-        app.logger.exception("Falha ao responder pergunta")
-        return _error(f"Nao foi possivel responder agora: {error}", 502)
 
+        resposta = response.output_text.strip()
+
+        if not resposta:
+
+            return _error(
+                "A IA não retornou uma resposta.",
+                502
+            )
+
+        return jsonify({
+            "resposta": resposta
+        })
+
+    except Exception:
+
+        app.logger.exception(
+            "Falha ao responder pergunta"
+        )
+
+        return _error(
+            "Não foi possível conectar ao WALL-E. "
+            "Verifique se a API da OpenAI está configurada.",
+            502
+        )
+
+
+# ---------------------------------------------------------
+# PÁGINA INICIAL
+# ---------------------------------------------------------
 
 @app.get("/")
 def home():
-    return send_from_directory(PROJECT_ROOT, "pg-introdutoria.html")
+
+    return send_from_directory(
+        PROJECT_ROOT,
+        "index.html"
+    )
+
 
 
 @app.get("/<path:filename>")
 def frontend_file(filename: str):
-    requested = (PROJECT_ROOT / filename).resolve()
-    if not str(requested).startswith(str(PROJECT_ROOT)) or requested.name.startswith("."):
-        return _error("Arquivo nao encontrado.", 404)
-    if requested.suffix.lower() in {".py", ".env", ".pyc"} or not requested.is_file():
-        return _error("Arquivo nao encontrado.", 404)
-    return send_from_directory(PROJECT_ROOT, filename)
 
+    requested = (
+        PROJECT_ROOT / filename
+    ).resolve()
+
+    if not str(requested).startswith(
+        str(PROJECT_ROOT)
+    ):
+
+        return _error(
+            "Arquivo não encontrado.",
+            404
+        )
+
+    if requested.name.startswith("."):
+
+        return _error(
+            "Arquivo não encontrado.",
+            404
+        )
+
+    if requested.suffix.lower() in {
+        ".py",
+        ".env",
+        ".pyc"
+    }:
+
+        return _error(
+            "Arquivo não encontrado.",
+            404
+        )
+
+    if not requested.is_file():
+
+        return _error(
+            "Arquivo não encontrado.",
+            404
+        )
+
+    return send_from_directory(
+        PROJECT_ROOT,
+        filename
+    )
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "5000")))
+
+    app.run(
+        host="0.0.0.0",
+        port=int(
+            os.getenv(
+                "PORT",
+                "5000"
+            )
+        ),
+        debug=False
+    )
