@@ -409,7 +409,7 @@ a:hover {
   display: flex;
   justify-content: center;
   position: relative; /* Adicionado para ativar a camada */
-  z-index: 1;         /* Adicionado para ficar acima do fundo */
+  z-index: 1; /* Adicionado para ficar acima do fundo */
 }
 .auth-card {
   width: 100%;
@@ -1179,15 +1179,15 @@ a:hover {
 }
 
 /* Animação extra para a setinha (se você usar tag <i>, <span> ou texto) */
-.login-submit span, 
+.login-submit span,
 .login-submit i {
   transition: transform 0.3s ease;
 }
 
 /* A setinha vai para o lado quando passa o mouse */
-.login-submit:hover span, 
+.login-submit:hover span,
 .login-submit:hover i {
-  transform: translateX(4px); 
+  transform: translateX(4px);
 }
 .login-divider {
   align-items: center;
