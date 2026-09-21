@@ -1,6 +1,6 @@
 /* ==========================================================
-   ECOMAPS — folha de estilos única (CSS3 puro)
-   Protótipo acadêmico. Mobile-first + responsivo.
+  ECOMAPS — estilos compartilhados (CSS3 puro)
+  Protótipo acadêmico. Mobile-first + responsivo.
    ========================================================== */
 
 /* ---------- Variáveis de cor (identidade Ecomaps) ---------- */
@@ -1342,14 +1342,17 @@ a:hover {
 /* ---------- Corpo docente ---------- */
 .faculty-section {
   background: #f0f7f2;
+  padding: 40px 20px;
 }
+
 .faculty-grid {
   display: grid;
-  gap: 28px 22px;
+  gap: 32px 24px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 34px auto 0;
-  max-width: 920px;
+  max-width: 980px; /* Aumentei um pouco para caber as fotos maiores */
 }
+
 .faculty-person {
   align-items: center;
   display: flex;
@@ -1357,27 +1360,38 @@ a:hover {
   gap: 12px;
   text-align: center;
 }
+
 .faculty-photo {
   align-items: center;
   background: #dceee2;
   border: 4px solid #b8d8c3;
-  border-radius: 50%;
+  border-radius: 50%; /* Garante o formato redondo */
   color: var(--verde-escuro);
   display: flex;
   font-size: 0.82rem;
-  height: 150px;
+  height: 180px; /* Aumentado de 150px para 180px */
   justify-content: center;
   overflow: hidden;
-  width: 150px;
+  width: 180px;  /* Aumentado de 150px para 180px para ficarem redondas e proporcionais */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.faculty-photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
 .faculty-photo span {
   border: 1px dashed #7caf8f;
   border-radius: 50%;
   padding: 22px 16px;
 }
+
 .faculty-person h3 {
   color: var(--verde-escuro);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 @media (max-width: 860px) {
@@ -1391,11 +1405,10 @@ a:hover {
     gap: 24px 12px;
   }
   .faculty-photo {
-    height: 124px;
-    width: 124px;
+    height: 140px;
+    width: 140px;
   }
 }
-
 /* ---------- Landing EcoMap / navegacao horizontal ---------- */
 .landing-body {
   background: #071715;
