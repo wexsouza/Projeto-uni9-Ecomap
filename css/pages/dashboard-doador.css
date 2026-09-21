@@ -1,6 +1,0 @@
-/* Regras específicas do dashboard completo do doador. */
-.dashboard-header,
-.welcome-strip {
-	position: relative;
-	z-index: 1;
-}
