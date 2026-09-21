@@ -35,6 +35,7 @@
     0 12px 28px rgba(0, 0, 0, 0.24);
   color: #6dad95;
   display: flex;
+  flex: 0 0 132px;
   height: 132px;
   justify-content: center;
   margin: 0 auto 10px;
@@ -56,14 +57,17 @@
 .team-grid b,
 .team-grid small {
   display: block;
+  text-align: center;
 }
 .team-grid b {
   color: #e0f8e9;
-  font-size: 0.75rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 .team-grid small {
   color: #759e8b;
-  font-size: 0.6rem;
+  font-size: 0.66rem;
   margin-top: 4px;
 }
 .landing-footer {
