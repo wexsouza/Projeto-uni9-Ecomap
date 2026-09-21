@@ -26,10 +26,11 @@
 }
 .team-photo {
   align-items: center;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   background: radial-gradient(circle at 35% 28%, #2c8062, #143e34 70%);
   border: 3px solid rgba(116, 231, 177, 0.8);
   border-radius: 50%;
+  block-size: 132px;
   box-shadow:
     0 0 0 5px rgba(74, 202, 145, 0.1),
     0 12px 28px rgba(0, 0, 0, 0.24);
@@ -37,8 +38,11 @@
   display: flex;
   flex: 0 0 132px;
   height: 132px;
+  inline-size: 132px;
   justify-content: center;
   margin: 0 auto 10px;
+  min-height: 132px;
+  min-width: 132px;
   overflow: hidden;
   width: 132px;
 }
