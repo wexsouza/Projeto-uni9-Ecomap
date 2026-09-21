@@ -1,2 +1,6 @@
-/* Ponto de entrada do dashboard do doador. */
-@import url("../../doador.css");
+/* Regras específicas do dashboard completo do doador. */
+.dashboard-header,
+.welcome-strip {
+	position: relative;
+	z-index: 1;
+}

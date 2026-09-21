@@ -1,2 +1,4 @@
-/* Ponto de entrada da área do doador. */
-@import url("../../doador.css");
+/* Regras específicas da área simples do doador. */
+.donor-main {
+	isolation: isolate;
+}

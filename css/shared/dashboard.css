@@ -1,0 +1,148 @@
+/* Ecomap - dashboard */
+/* ==========================================================
+   DASHBOARDS
+   ========================================================== */
+.dash-hello {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  color: var(--verde-escuro);
+}
+.dash-card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e6ebe8;
+  border-radius: var(--radius);
+  padding: 22px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: var(--sombra);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s;
+}
+.dash-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--verde-claro);
+  box-shadow: var(--sombra-forte);
+}
+.dash-ico {
+  font-size: 1.7rem;
+}
+.dash-card h3 {
+  color: var(--verde-escuro);
+  font-size: 1.05rem;
+  margin: 8px 0 4px;
+}
+.dash-card p {
+  color: var(--cinza-texto);
+  font-size: 0.9rem;
+}
+
+.profile {
+  margin-top: 34px;
+  background: var(--cinza-claro);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.profile h2 {
+  color: var(--verde-escuro);
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+.profile-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.profile-list li {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+.profile-list strong {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--azul-verde);
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+/* Tablet */
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop / notebook */
+@media (min-width: 960px) {
+  .cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .profile-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: menu hambúrguer */
+@media (max-width: 860px) {
+  .hamburger {
+    display: block;
+  }
+  .main-nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid #e6ebe8;
+    box-shadow: var(--sombra);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .main-nav.open {
+    max-height: 420px;
+  }
+  .main-nav a {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eef2f0;
+  }
+  .nav-cta {
+    margin: 14px 20px 20px;
+    text-align: center;
+  }
+  .hero {
+    min-height: 68vh;
+  }
+  .btn {
+    padding: 15px 24px;
+  } /* botões grandes e fáceis de tocar */
+  .btn-block {
+    padding: 16px;
+  }
+  .auth-card {
+    padding: 26px 18px;
+    border-radius: 18px;
+  }
+}

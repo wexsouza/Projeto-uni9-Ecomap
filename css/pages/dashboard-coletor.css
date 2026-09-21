@@ -1,2 +1,4 @@
-/* Ponto de entrada do dashboard de coletor. */
-@import url("../style.css");
+/* Regras específicas do dashboard de coletor. */
+.dashboard-coletor-page .dash-card {
+	min-height: 150px;
+}
