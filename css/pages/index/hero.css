@@ -1,0 +1,223 @@
+/* EcoMap landing - hero */
+.hero-layout {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100dvh - 162px);
+}
+.hero-copy {
+  max-width: 610px;
+}
+.landing-eyebrow {
+  color: #64dba4;
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.hero-copy h1,
+.screen-heading h2 {
+  color: #eefdf5;
+  font-size: clamp(2.25rem, 5vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 19px 0;
+}
+.hero-copy h1 em,
+.screen-heading h2 em {
+  color: #64dba4;
+  font-style: normal;
+}
+.hero-copy p,
+.screen-heading p {
+  color: #94b8a8;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 490px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+.landing-btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 25px;
+  justify-content: space-between;
+  padding: 13px 16px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.landing-btn span {
+  font-size: 1.1rem;
+}
+.landing-btn-primary {
+  background: #238a68;
+  box-shadow: 0 8px 20px rgba(29, 135, 95, 0.2);
+  color: white;
+}
+.landing-btn-primary:hover {
+  background: #32a77e;
+  transform: translateY(-2px);
+}
+.landing-btn-ghost {
+  border-color: rgba(103, 201, 160, 0.23);
+  color: #a5cabc;
+}
+.landing-btn-ghost:hover {
+  background: rgba(62, 178, 128, 0.12);
+  border-color: #55cb96;
+}
+.hero-note {
+  color: #698f80;
+  font-size: 0.68rem;
+  margin-top: 42px;
+}
+.hero-note span {
+  color: #67dda5;
+  margin-right: 8px;
+}
+.hero-visual {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.map-radar {
+  border: 1px solid rgba(96, 222, 164, 0.3);
+  border-radius: 50%;
+  height: min(38vw, 480px);
+  max-height: 480px;
+  max-width: 480px;
+  position: relative;
+  width: min(38vw, 480px);
+}
+.map-radar::before,
+.map-radar::after {
+  border: 1px solid rgba(96, 222, 164, 0.16);
+  border-radius: 50%;
+  content: "";
+  inset: 12%;
+  position: absolute;
+}
+.map-radar::after {
+  inset: 25%;
+}
+.map-radar > span {
+  background: #5edfa5;
+  border-radius: 50%;
+  box-shadow: 0 0 14px #5edfa5;
+  height: 4px;
+  position: absolute;
+  width: 4px;
+}
+.map-radar > span:nth-child(1) {
+  left: 21%;
+  top: 29%;
+}
+.map-radar > span:nth-child(2) {
+  right: 20%;
+  top: 42%;
+}
+.map-radar > span:nth-child(3) {
+  bottom: 23%;
+  left: 38%;
+}
+.map-pin,
+.map-point {
+  align-items: center;
+  background: #258d69;
+  border: 3px solid #b8f7d9;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(70, 220, 153, 0.4);
+  color: white;
+  display: flex;
+  font-style: normal;
+  height: 27px;
+  justify-content: center;
+  position: absolute;
+  width: 27px;
+  z-index: 2;
+}
+.pin-one {
+  left: 23%;
+  top: 47%;
+}
+.pin-two {
+  right: 25%;
+  top: 28%;
+}
+.landing-logo-orbit {
+  align-items: center;
+  background: #edfff5;
+  border: 8px solid rgba(31, 95, 72, 0.85);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px #69dfa8,
+    0 0 52px rgba(67, 213, 147, 0.3);
+  display: flex;
+  height: 155px;
+  justify-content: center;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 155px;
+  z-index: 1;
+}
+.landing-logo-orbit img {
+  height: 145px;
+  object-fit: cover;
+  transform: scale(1.06);
+  width: 145px;
+}
+.hero-bubble {
+  background: rgba(17, 62, 49, 0.9);
+  border: 1px solid rgba(108, 216, 169, 0.3);
+  border-radius: 9px;
+  bottom: 9%;
+  color: #dffbed;
+  font-size: 0.75rem;
+  left: 2%;
+  padding: 10px 13px;
+  position: absolute;
+}
+.hero-bubble small {
+  color: #78b49a;
+  display: block;
+  font-size: 0.58rem;
+  margin-top: 3px;
+}
+.screen-index {
+  align-items: center;
+  bottom: 28px;
+  color: #6b9886;
+  display: flex;
+  font-size: 0.65rem;
+  gap: 8px;
+  left: clamp(25px, 6vw, 96px);
+  letter-spacing: 0.12em;
+  position: absolute;
+  z-index: 3;
+}
+.screen-index b {
+  color: #6ee1a9;
+  font-size: 0.9rem;
+}
+.screen-index i {
+  background: rgba(104, 202, 160, 0.4);
+  display: block;
+  height: 1px;
+  margin: 0 10px;
+  width: 45px;
+}
+.screen-index small {
+  font-size: 0.54rem;
+}

@@ -604,3 +604,188 @@
 }
 
 /* ---------- Corpo docente ---------- */
+
+/* Overrides finais da tela de login */
+.login-robot {
+  height: 180px;
+}
+
+/* ---------- Compactacao final da entrada ---------- */
+.login-shell {
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 500px);
+  gap: clamp(24px, 5vw, 80px);
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+.login-showcase {
+  min-height: calc(100dvh - 48px);
+  padding-bottom: 0;
+}
+.login-brand {
+  font-size: 1.38rem;
+}
+.login-brand-mark {
+  height: 54px;
+  width: 54px;
+}
+.login-brand-mark img {
+  height: 44px;
+  width: 44px;
+}
+.login-brand small {
+  font-size: 0.7rem;
+}
+.login-topline {
+  margin-top: 5vh;
+}
+.login-robot {
+  height: 205px;
+  margin: -5px auto -10px;
+}
+.robot-orbit {
+  height: 185px;
+  width: 185px;
+}
+.robot-body {
+  background: rgba(20, 59, 49, 0.65);
+  border: 5px solid #59c995;
+  border-radius: 50%;
+  height: 144px;
+  width: 144px;
+}
+.robot-body img {
+  background: #effff7;
+  border-radius: 50%;
+  filter: brightness(1.2) contrast(0.9) saturate(1.08);
+  height: 132px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  object-position: center 40%;
+  transform: translateY(-5px) scale(1.08);
+  width: 132px;
+}
+.robot-leaf {
+  right: -9px;
+  top: 3px;
+}
+.login-quote {
+  font-size: 1.2rem;
+  margin-top: -7px;
+}
+.login-showcase-copy h2 {
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+  margin: 7px 0 12px;
+}
+.login-capabilities {
+  gap: 6px 14px;
+}
+.login-capabilities span {
+  font-size: 0.7rem;
+}
+.login-panel {
+  max-width: 500px;
+  padding: 23px clamp(23px, 3vw, 34px);
+}
+.login-line {
+  margin: 17px 0 14px;
+}
+.login-panel .auth-title {
+  font-size: clamp(1.62rem, 2.5vw, 2.15rem);
+  margin-bottom: 9px;
+}
+.login-panel .auth-sub {
+  margin-bottom: 15px;
+}
+.login-profiles {
+  margin-bottom: 16px;
+}
+.login-profiles .switch-btn {
+  padding: 9px 11px;
+}
+.login-field input {
+  padding-bottom: 11px;
+  padding-top: 11px;
+}
+.login-options {
+  margin-bottom: 14px;
+}
+.login-divider {
+  margin: 13px 0 9px;
+}
+.login-social {
+  padding: 9px;
+}
+.login-register {
+  margin-top: 13px;
+}
+
+@media (max-height: 760px) and (min-width: 701px) {
+  .login-shell {
+    padding-bottom: 14px;
+    padding-top: 14px;
+  }
+  .login-showcase {
+    min-height: calc(100dvh - 28px);
+  }
+  .login-topline {
+    margin-top: 2vh;
+  }
+  .login-robot {
+    height: 145px;
+    margin-bottom: -15px;
+    transform: scale(0.7);
+  }
+  .robot-body img {
+    height: 132px;
+    width: 132px;
+  }
+  .login-quote {
+    font-size: 1.05rem;
+    margin-top: -15px;
+  }
+  .login-showcase-copy h2 {
+    font-size: 1.55rem;
+    margin-bottom: 5px;
+  }
+  .login-capabilities {
+    gap: 4px 10px;
+  }
+  .login-capabilities span {
+    font-size: 0.64rem;
+  }
+  .login-panel {
+    max-height: calc(100dvh - 28px);
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-brand {
+    font-size: 1.22rem;
+  }
+  .login-brand-mark {
+    height: 48px;
+    width: 48px;
+  }
+  .login-brand-mark img {
+    height: 39px;
+    width: 39px;
+  }
+  .login-robot {
+    height: 112px;
+    margin: -2px auto -11px;
+    transform: scale(0.62);
+  }
+  .robot-body img {
+    height: 116px;
+    transform: translateY(-4px) scale(1.08);
+    width: 116px;
+  }
+  .login-showcase-copy h2 {
+    font-size: 1.22rem;
+  }
+  .login-panel {
+    padding: 20px 17px;
+  }
+}

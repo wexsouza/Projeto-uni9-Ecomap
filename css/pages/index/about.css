@@ -1,0 +1,39 @@
+/* EcoMap landing - about */
+.value-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 68px auto 50px;
+  max-width: 920px;
+}
+.value-grid article {
+  background: rgba(15, 55, 45, 0.7);
+  border: 1px solid rgba(105, 202, 160, 0.2);
+  border-radius: 14px;
+  padding: 25px;
+}
+.value-grid article > span {
+  color: #63dda5;
+  font-size: 1.5rem;
+}
+.value-grid b {
+  color: #e4faed;
+  display: block;
+  font-size: 1rem;
+  margin: 18px 0 8px;
+}
+.value-grid p {
+  color: #87ae9d;
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+.impact-phrase {
+  color: #9fc2b1;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.impact-phrase em {
+  color: #67dda5;
+  font-style: normal;
+}

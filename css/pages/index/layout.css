@@ -1,0 +1,100 @@
+/* EcoMap landing - layout */
+/* Ecomap - index */
+/* ---------- Landing EcoMap / navegacao horizontal ---------- */
+.landing-body {
+  background: #071715;
+  color: #e8f8ef;
+  overflow: hidden;
+}
+.landing-body .site-header {
+  background: rgba(245, 252, 248, 0.9);
+  border-bottom: 1px solid rgba(54, 128, 101, 0.14);
+  box-shadow: 0 5px 22px rgba(10, 44, 34, 0.09);
+}
+.landing-body .brand {
+  color: #0d5944;
+}
+.landing-body .brand img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+.landing-body .brand small {
+  color: #5b8d76;
+  display: block;
+  font-size: 0.48rem;
+  letter-spacing: 0.13em;
+  margin-top: 1px;
+}
+.landing-body .main-nav a {
+  color: #356552;
+  font-size: 0.82rem;
+}
+.landing-body .main-nav a:hover,
+.landing-body .main-nav a.is-active {
+  color: #0c7655;
+}
+.landing-body .nav-cta {
+  background: #187c5a;
+  color: #fff !important;
+}
+.landing-stage {
+  display: flex;
+  height: 100dvh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  width: 100vw;
+}
+.landing-stage::-webkit-scrollbar {
+  display: none;
+}
+.landing-screen {
+  background: #081b18;
+  flex: 0 0 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  padding: 112px clamp(25px, 6vw, 96px) 50px;
+  position: relative;
+  scroll-snap-align: start;
+}
+.landing-screen::before {
+  background:
+    radial-gradient(
+      circle at 75% 36%,
+      rgba(35, 153, 108, 0.15),
+      transparent 32%
+    ),
+    linear-gradient(120deg, #071614, #0b2925 55%, #071614);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+.landing-screen::after {
+  border: 1px solid rgba(92, 204, 157, 0.1);
+  border-radius: 50%;
+  content: "";
+  height: 80vw;
+  left: 49%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  width: 120vw;
+}
+.landing-container {
+  margin: 0 auto;
+  max-width: 1240px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.landing-grid-lines {
+  background-image:
+    linear-gradient(rgba(105, 214, 166, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 214, 166, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  inset: 0;
+  opacity: 0.55;
+  position: absolute;
+}

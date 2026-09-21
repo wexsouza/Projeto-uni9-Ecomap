@@ -1,0 +1,158 @@
+/* EcoMap landing - map */
+.split-heading .landing-btn {
+  margin-bottom: 12px;
+}
+.landing-map {
+  background: rgba(12, 46, 39, 0.76);
+  border: 1px solid rgba(105, 202, 160, 0.2);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  height: 430px;
+  margin-top: 35px;
+  overflow: hidden;
+}
+.map-surface {
+  background-color: #0b2927;
+  background-image:
+    linear-gradient(
+      26deg,
+      transparent 44%,
+      rgba(91, 197, 160, 0.12) 45%,
+      transparent 46%
+    ),
+    linear-gradient(
+      112deg,
+      transparent 47%,
+      rgba(91, 197, 160, 0.1) 48%,
+      transparent 49%
+    ),
+    linear-gradient(rgba(80, 182, 148, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 182, 148, 0.05) 1px, transparent 1px);
+  background-size:
+    190px 140px,
+    230px 190px,
+    43px 43px,
+    43px 43px;
+  position: relative;
+}
+.map-road {
+  border: 1px solid rgba(101, 208, 165, 0.16);
+  border-radius: 50%;
+  position: absolute;
+}
+.road-a {
+  height: 90%;
+  left: 30%;
+  top: -20%;
+  transform: rotate(25deg);
+  width: 25%;
+}
+.road-b {
+  height: 110%;
+  right: 20%;
+  top: -15%;
+  transform: rotate(-37deg);
+  width: 18%;
+}
+.road-c {
+  height: 40%;
+  left: 8%;
+  top: 40%;
+  transform: rotate(-18deg);
+  width: 78%;
+}
+.map-region {
+  color: rgba(160, 223, 195, 0.28);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  position: absolute;
+}
+.region-a {
+  left: 28%;
+  top: 42%;
+}
+.region-b {
+  right: 23%;
+  top: 24%;
+}
+.map-point {
+  height: 22px;
+  width: 22px;
+}
+.point-a {
+  left: 29%;
+  top: 40%;
+}
+.point-b {
+  right: 27%;
+  top: 26%;
+}
+.point-c {
+  bottom: 25%;
+  left: 53%;
+}
+.point-user {
+  background: #5caaf1;
+  border-color: #d3eaff;
+  bottom: 33%;
+  right: 34%;
+  font-size: 0.55rem;
+}
+.map-label {
+  bottom: 18px;
+  color: #72dba7;
+  font-size: 0.58rem;
+  left: 18px;
+  letter-spacing: 0.16em;
+  position: absolute;
+}
+.map-label small {
+  color: #759b8c;
+  letter-spacing: 0.05em;
+  margin-left: 8px;
+}
+.point-list {
+  background: rgba(8, 29, 26, 0.72);
+  padding: 25px 18px;
+}
+.point-list article {
+  border-bottom: 1px solid rgba(105, 202, 160, 0.13);
+  display: flex;
+  gap: 10px;
+  padding: 18px 0;
+}
+.point-list article > i {
+  align-items: center;
+  background: rgba(72, 201, 143, 0.15);
+  border: 1px solid #49b985;
+  border-radius: 50%;
+  color: #63dda5;
+  display: flex;
+  font-style: normal;
+  height: 23px;
+  justify-content: center;
+  width: 23px;
+}
+.point-list b,
+.point-list small,
+.point-list em {
+  display: block;
+}
+.point-list b {
+  color: #def8e9;
+  font-size: 0.68rem;
+}
+.point-list small,
+.point-list em {
+  color: #789e8c;
+  font-size: 0.58rem;
+  font-style: normal;
+  margin-top: 4px;
+}
+.centered-heading {
+  text-align: center;
+}
+.centered-heading p {
+  margin: auto;
+}

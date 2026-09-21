@@ -1,0 +1,69 @@
+/* EcoMap landing - process */
+.process-screen,
+.map-screen,
+.about-screen,
+.team-screen {
+  padding-top: 145px;
+}
+.screen-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  margin: 14px 0 13px;
+}
+.process-flow {
+  align-items: stretch;
+  display: flex;
+  gap: 12px;
+  margin-top: 70px;
+}
+.process-flow article {
+  background: rgba(17, 58, 47, 0.66);
+  border: 1px solid rgba(106, 202, 159, 0.2);
+  border-radius: 13px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 155px;
+  padding: 17px;
+  transition: 0.2s ease;
+}
+.process-flow article:hover {
+  border-color: #53d39a;
+  transform: translateY(-5px);
+}
+.process-flow article span {
+  color: #65dca4;
+  font-size: 0.65rem;
+}
+.process-flow article b {
+  color: #e3faed;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.process-flow article small {
+  color: #82aa99;
+  font-size: 0.65rem;
+  line-height: 1.35;
+}
+.process-flow > i {
+  align-self: center;
+  color: #5ddba2;
+  font-size: 1.3rem;
+  font-style: normal;
+}
+.process-line-label {
+  color: #668e7d;
+  display: flex;
+  font-size: 0.52rem;
+  justify-content: space-between;
+  letter-spacing: 0.13em;
+  margin-top: 15px;
+}
+.process-line-label b {
+  color: #66dba4;
+}
+.split-heading {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
