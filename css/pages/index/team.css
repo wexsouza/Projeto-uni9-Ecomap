@@ -63,3 +63,15 @@
   font-size: 0.66rem;
   margin-top: 4px;
 }
+.landing-footer {
+  align-items: center;
+  background: #061310;
+  color: #789f8d;
+  display: flex;
+  font-size: 0.68rem;
+  justify-content: space-between;
+  padding: 17px clamp(25px, 6vw, 96px);
+}
+.landing-footer a {
+  color: #68dca5;
+}
