@@ -96,7 +96,9 @@
     margin-top: 20px;
   }
   .team-photo {
-    height: 75px;
+    flex-basis: 96px;
+    height: 96px;
+    width: 96px;
   }
   .landing-footer {
     display: none;
@@ -279,7 +281,9 @@
     min-height: 285px;
   }
   .team-photo {
-    height: 82px;
+    flex-basis: 108px;
+    height: 108px;
+    width: 108px;
   }
 }
 
