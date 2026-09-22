@@ -1,15 +1,4 @@
 /* EcoMap landing - team */
-.team-count {
-  color: #6ce0a7;
-  font-size: 2.5rem;
-  line-height: 0.8;
-  text-align: right;
-}
-.team-count small {
-  color: #759d8b;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-}
 .team-grid {
   display: grid;
   gap: 12px;
@@ -60,16 +49,4 @@
   color: #759e8b;
   font-size: 0.66rem;
   margin-top: 4px;
-}
-.landing-footer {
-  align-items: center;
-  background: #061310;
-  color: #789f8d;
-  display: flex;
-  font-size: 0.68rem;
-  justify-content: space-between;
-  padding: 17px clamp(25px, 6vw, 96px);
-}
-.landing-footer a {
-  color: #68dca5;
 }

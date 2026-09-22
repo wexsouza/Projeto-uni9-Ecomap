@@ -24,28 +24,6 @@
     height: 245px;
     width: 245px;
   }
-  .landing-logo-orbit {
-    height: 105px;
-    width: 105px;
-  }
-  .landing-logo-orbit img {
-    height: 100px;
-    width: 100px;
-  }
-  .hero-note {
-    margin-top: 25px;
-  }
-  .process-screen,
-  .map-screen,
-  .about-screen,
-  .team-screen {
-    padding-top: 105px;
-  }
-  .process-flow {
-    flex-direction: column;
-    gap: 7px;
-    margin-top: 25px;
-  }
   .process-flow article {
     min-height: 69px;
   }
