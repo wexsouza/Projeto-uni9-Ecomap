@@ -96,13 +96,10 @@
     margin-top: 20px;
   }
   .team-photo {
-    block-size: 96px;
-    flex-basis: 96px;
-    height: 96px;
-    inline-size: 96px;
-    min-height: 96px;
-    min-width: 96px;
-    width: 96px;
+    height: 75px;
+  }
+  .landing-footer {
+    display: none;
   }
   .screen-index {
     bottom: 18px;
@@ -144,6 +141,7 @@
     display: none;
   }
 }
+
 /* ---------- Mapa da landing sem rolagem interna ---------- */
 .landing-screen.map-screen {
   overflow: hidden;
@@ -308,24 +306,6 @@
   }
   .point-list {
     min-height: 145px;
-  }
-
-  .team-screen {
-    overflow-y: auto;
-    padding-bottom: 42px;
-    padding-top: clamp(82px, 11vh, 118px);
-  }
-  .team-screen .screen-heading h2 {
-    font-size: clamp(1.8rem, 3.6vw, 3rem);
-    margin-bottom: 9px;
-  }
-  .team-screen .screen-heading p {
-    font-size: 0.8rem;
-    max-width: 390px;
-  }
-  .team-screen .team-grid {
-    gap: 16px 12px;
-    margin-top: clamp(16px, 3vh, 26px);
   }
 }
 
