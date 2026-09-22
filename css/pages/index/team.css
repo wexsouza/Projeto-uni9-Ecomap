@@ -1,15 +1,4 @@
 /* EcoMap landing - team */
-.team-count {
-  color: #6ce0a7;
-  font-size: 2.5rem;
-  line-height: 0.8;
-  text-align: right;
-}
-.team-count small {
-  color: #759d8b;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-}
 .team-grid {
   display: grid;
   gap: 12px;

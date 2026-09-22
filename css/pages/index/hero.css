@@ -74,32 +74,6 @@
   background: rgba(62, 178, 128, 0.12);
   border-color: #55cb96;
 }
-.hero-note {
-  color: #698f80;
-  font-size: 0.68rem;
-  margin-top: 42px;
-}
-.hero-note span {
-  color: #67dda5;
-  margin-right: 8px;
-}
-.hero-visual {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.map-radar {
-  border: 1px solid rgba(96, 222, 164, 0.3);
-  border-radius: 50%;
-  height: min(38vw, 480px);
-  max-height: 480px;
-  max-width: 480px;
-  position: relative;
-  width: min(38vw, 480px);
-}
-.map-radar::before,
-.map-radar::after {
   border: 1px solid rgba(96, 222, 164, 0.16);
   border-radius: 50%;
   content: "";

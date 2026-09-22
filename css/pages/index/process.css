@@ -31,10 +31,6 @@
   border-color: #53d39a;
   transform: translateY(-5px);
 }
-.process-flow article span {
-  color: #65dca4;
-  font-size: 0.65rem;
-}
 .process-flow article b {
   color: #e3faed;
   font-size: 0.9rem;
