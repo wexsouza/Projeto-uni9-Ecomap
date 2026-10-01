@@ -51,10 +51,18 @@
 }
 
 .faculty-photo img {
+  display: block;
+  flex: 0 0 100%;
   border-radius: 50%;
   height: 100%;
+  min-height: 100%;
+  min-width: 100%;
   object-fit: cover;
   width: 100%;
+}
+.faculty-photo .faculty-photo-otavio {
+  object-position: center 38%;
+  transform: scale(1.03);
 }
 
 .faculty-person h2 {

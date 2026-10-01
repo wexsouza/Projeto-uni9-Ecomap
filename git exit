@@ -1,0 +1,270 @@
+[33mcommit b77f1eee0be632f246d93d4da1b4197ba3e43730[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:26:47 2026 -0300
+
+    remove contador da equipe
+
+[33mcommit 78dbc2a783665dd08b292af80a572b7164c1c7bc[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:22:44 2026 -0300
+
+    atualiza fotos e equipe da landing
+
+[33mcommit bbdf5555268a6851d8fb8b96ea7d03dbc71eb7e0[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:17:53 2026 -0300
+
+    ajusta fotos do corpo docente
+
+[33mcommit 2e326bc497f5b303a83c92a9c6ed0d53c825ba3d[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:14:16 2026 -0300
+
+    restaura visual mantendo divisao CSS
+
+[33mcommit 68bd989ca02bc30b2c697b50aab46198be1acf74[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:11:34 2026 -0300
+
+    restaura detalhes da landing
+
+[33mcommit fe6bd699098e359c3fd17c80811f02e9ffabcca5[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:08:21 2026 -0300
+
+    remove numeracoes decorativas
+
+[33mcommit 11bb0f96dde7302a3ac10274903241bae6d3dd75[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 21:06:34 2026 -0300
+
+    remove barra inferior da landing
+
+[33mcommit 1349b699a97d80e5bbab16ed82f2bf075218b400[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:57:09 2026 -0300
+
+    fixa proporcao circular das fotos
+
+[33mcommit 61128744beb4099d47e2d3087bb0c33dee79b357[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:54:58 2026 -0300
+
+    centraliza nomes da equipe
+
+[33mcommit 9d47540270effc7a21ee4bd3901b8f118aaba1dd[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:51:59 2026 -0300
+
+    destaca fotos circulares da equipe
+
+[33mcommit e9bcc0a8f13dea11fd4a391a6783e8a6d8665bf0[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:45:20 2026 -0300
+
+    ajusta circulos do corpo docente
+
+[33mcommit 1e5f486c27d50dadaa1e5f2ef88648a480ef6db4[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:42:53 2026 -0300
+
+    remove folhas CSS artificiais
+
+[33mcommit 934afcf8771270cfd3932b41899b6b470f31d41f[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:41:17 2026 -0300
+
+    divide CSS da landing por secao
+
+[33mcommit 9076485ed9c4f5d5c7e59e6c0cfae2caedec4bef[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:34:51 2026 -0300
+
+    separa estilos CSS por pagina
+
+[33mcommit b87d6e13522c4f945dbde3e7555aa8d292485c11[m
+Author: lucasreginatotech <lucasreginato020@gmail.com>
+Date:   Mon Sep 21 20:26:59 2026 -0300
+
+    atualizei e separei todos css
+
+[33mcommit 3e3c95716c746c1f63d016ab22dbe2bf70d25406[m
+Author: Wesley Assis <145075006+WesleyAssisDEV@users.noreply.github.com>
+Date:   Tue Sep 15 19:14:58 2026 -0300
+
+    att
+    
+    att
+
+[33mcommit 3d7622507853eb10c87381b0a5f6e376b9d9d7a0[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Mon Sep 14 21:07:16 2026 -0300
+
+    pastas vazias
+
+[33mcommit 668750f982a879051414091c64d12a94095395b9[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Mon Sep 14 21:04:22 2026 -0300
+
+    organização
+
+[33mcommit 3e9d3026114f2b6845b89e5709c8b5ca202a8653[m
+Author: Wesley Assis <145075006+WesleyAssisDEV@users.noreply.github.com>
+Date:   Mon Sep 14 20:52:15 2026 -0300
+
+    atualizado tela de login
+    
+    foi arrumado alguns bugs, tela de cadastro e outros mais
+
+[33mcommit 191ef5d51d66c7d2b861d23970982f7f1edf7d0a[m
+Author: Otavio <comparutotavio2@gmail.com>
+Date:   Fri Sep 11 21:29:19 2026 -0300
+
+    Upload da página missão visão e valores feito por OTAVIO e PEDRO
+    
+    criei uma pasta para subir os arquivos HTML, CSS e JS, subi os códigos da página e conferi que está rodando normalmente ( apenas não consegui inserir logo da EcoMap corretamente )
+
+[33mcommit c66f36099d84ef26ab8a194d1cc46eb8f0aa6758[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Fri Sep 11 00:24:26 2026 -0300
+
+    ia funcionando
+
+[33mcommit 60c6dfe8a99120d15977afe8ada17b1b48903233[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Thu Sep 10 23:40:37 2026 -0300
+
+    update
+
+[33mcommit 641c08546a248b79e443685986bc7a507d7334a6[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Thu Sep 10 23:33:26 2026 -0300
+
+    update
+
+[33mcommit 80663cee65086079f5b572680b7b885515134a45[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Thu Sep 10 23:17:11 2026 -0300
+
+    mundaças no site
+
+[33mcommit 9f2f0529ebf17af65a482113ff7f3668d3f94e74[m
+Author: Wesley Assis <145075006+WesleyAssisDEV@users.noreply.github.com>
+Date:   Thu Sep 10 19:09:46 2026 -0300
+
+    ecomap_02_wesley
+    
+    outra ideia de site
+
+[33mcommit 4c44067bb5b0325e33b64c4b9b39685a1c566a31[m
+Author: Wesley Assis <145075006+WesleyAssisDEV@users.noreply.github.com>
+Date:   Thu Sep 10 18:59:23 2026 -0300
+
+    ecomap_02
+    
+    site desenvolvido wesley
+
+[33mcommit 68b48038d846a926324bd4819449bb1d5743f291[m
+Merge: d3f026d e4a3f34
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 9 20:02:54 2026 -0300
+
+    Merge branch 'main' of https://github.com/wexsouza/Projeto-uni9-Ecomap
+
+[33mcommit d3f026d003e7bfa709bcd1b4b9638ca3c534f2c8[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 9 20:02:50 2026 -0300
+
+    updates
+
+[33mcommit e4a3f34b39e69d646a22b874e8f7c697163ec710[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 9 18:50:43 2026 -0300
+
+    readme
+
+[33mcommit 182f2a66d4896c7932f88d41f4ba5591f88f3afb[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sun Sep 6 22:07:13 2026 -0300
+
+    reconstroi cerebro do WALL-E
+
+[33mcommit a76bc2fa03d88486e1ada46951838a33d70ba3a6[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sun Sep 6 22:02:46 2026 -0300
+
+    add initial project structure with Flask app, environment configuration, and requirements
+
+[33mcommit 7ba415c73e98ea925b768acd45250598d0f264a0[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sun Sep 6 21:59:32 2026 -0300
+
+    corrige respostas da IA e analise de imagens
+
+[33mcommit c5f1299b7d8b39819fe49f28d8acb180d1c2ce5a[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sat Sep 5 23:17:54 2026 -0300
+
+    adiciona apresentacao academica ao WALL-E
+
+[33mcommit eeda29facf6f2a720653b34eb7f747a14c8ffd96[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sat Sep 5 23:11:39 2026 -0300
+
+    amplia respostas do WALL-E e ajusta painel do doador
+
+[33mcommit 03883fea0e2eb58a33b1019c10c218d025c1a2e8[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sat Sep 5 21:46:00 2026 -0300
+
+    integração da openAI, criação da pagina do doador, porém poderá ser modelado conforme o projeto
+
+[33mcommit 4309ccd3b61dc86d36a9ccd105116c934194400b[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Thu Sep 3 22:13:11 2026 -0300
+
+    atualizado
+
+[33mcommit 9035fc422508f1d0e4642c754378c1076ba70dcf[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 2 20:37:22 2026 -0300
+
+    imagem
+
+[33mcommit 858ad3403d7377ffdd7bbb29e816563c0d492095[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 2 20:34:47 2026 -0300
+
+    diagrama atualizado
+
+[33mcommit c022996255c41af53d53131b86740a46e4623f6a[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 2 18:39:32 2026 -0300
+
+    atualizado
+
+[33mcommit bef5cac7d50875f1a9cd8e8278b7377a2297f9c0[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Wed Sep 2 18:11:34 2026 -0300
+
+    aula pede para que tenha pasta chamada arquitetura onde ficará o diagrama
+
+[33mcommit 67db51dedd1ebf4b9655ef30ddaf88c265c193e9[m
+Author: Otavio <pedrohmargutti@gmail.com>
+Date:   Mon Aug 31 20:45:49 2026 -0300
+
+    Atualizado ODS 12 escolhido
+
+[33mcommit e89a09510590669c53ba56a765a4c79713dda278[m
+Author: wesley <wesley.dnx@gmail.com>
+Date:   Mon Aug 31 20:42:56 2026 -0300
+
+    atualizado
+
+[33mcommit 19b136a244204b0165a16e281bbdb384e1e6f898[m
+Author: Wesley <wesley.dnx@gmail.com>
+Date:   Sat Aug 29 16:07:52 2026 -0300
+
+    orientação onde mexer e onde não mexer
+
+[33mcommit 88f2413eb990

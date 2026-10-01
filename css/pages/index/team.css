@@ -35,6 +35,10 @@
   object-fit: cover;
   width: 100%;
 }
+.team-photo .team-photo-otavio {
+  object-position: center 38%;
+  transform: scale(1.03);
+}
 .team-grid b,
 .team-grid small {
   display: block;
